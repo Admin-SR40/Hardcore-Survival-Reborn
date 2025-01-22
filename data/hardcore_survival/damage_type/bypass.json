@@ -1,0 +1,7 @@
+{
+    "exhaustion": 0,
+    "death_message_type": "intentional_game_design",
+    "effects": "hurt",
+    "message_id": "death.attack.bypass",
+    "scaling": "never"
+}
