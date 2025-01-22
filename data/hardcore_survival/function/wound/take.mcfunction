@@ -1,9 +1,12 @@
+# 重置计分板
 scoreboard players add @s hs.woundLevel 1
 scoreboard players set @s hs.takeDamage 0
 scoreboard players set @s hs.woundTimer 0
 
+# 设置上限
 execute as @s if score @s hs.woundLevel matches 6.. run scoreboard players set @s hs.woundLevel 5
 
+# 造成伤害
 execute as @s if score @s hs.woundLevel matches 1 run damage @s 0.2 hardcore_survival:bypass
 execute as @s if score @s hs.woundLevel matches 2 run damage @s 0.4 hardcore_survival:bypass
 execute as @s if score @s hs.woundLevel matches 3 run damage @s 0.6 hardcore_survival:bypass
