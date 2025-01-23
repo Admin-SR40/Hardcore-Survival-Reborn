@@ -1,3 +1,31 @@
+#   _   _               _                      ____                   _            _ 
+#  | | | | __ _ _ __ __| | ___ ___  _ __ ___  / ___| _   _ _ ____   _(___   ____ _| |
+#  | |_| |/ _` | '__/ _` |/ __/ _ \| '__/ _ \ \___ \| | | | '__\ \ / | \ \ / / _` | |
+#  |  _  | (_| | | | (_| | (_| (_) | | |  __/  ___) | |_| | |   \ V /| |\ V | (_| | |
+#  |_| |_|\__,_|_|  \__,_|\___\___/|_|  \___| |____/ \__,_|_|    \_/ |_| \_/ \__,_|_|
+#                           ____      _                                              
+#                          |  _ \ ___| |__   ___  _ __ _ __                          
+#                          | |_) / _ | '_ \ / _ \| '__| '_ \                         
+#                          |  _ |  __| |_) | (_) | |  | | | |                        
+#                          |_| \_\___|_.__/ \___/|_|  |_| |_|                        
+#
+
+# Hardcore Survival Reborn
+# Created by Admin_SR40
+# All rights reserved. Do not distribute.
+
+# Thanks for playing Hardcore Survival Reborn!
+# Current Version: 0.2 Alpha
+# Compatible Minecraft Version: 1.21.3+
+# GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn (Currently private)
+
+# Found bugs? Create an Issue on GitHub or email me at 402757046@qq.com!
+# Sorry, but all explanations are in Chinese.
+
+# Contributors:
+#  - Admin_SR40
+#  - (Your name here!)
+
 ### 受击后受到伤害增加 ###
 execute as @a if score @s hs.takeDamage matches 30.. if data entity @s {HurtTime:10s} run function hardcore_survival:wound/take
 execute as @a if score @s hs.woundLevel matches 1.. run scoreboard players add @s hs.woundTimer 1
