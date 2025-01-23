@@ -38,18 +38,21 @@ execute as @a if score @s hs.death matches 1.. run function hardcore_survival:de
 ### 锁定难度 ###
 difficulty hard
 
-### TITLE初始化 ###
-title @a times 0 20 0
-
 ### 设定计分板初始值 ###
 scoreboard players set @a hs.percentage 100
 execute as @a store result score @s hs.maxHealth run attribute @s max_health get
+execute as @a store result score @s hs.yaw run data get entity @s Rotation[0]
+execute as @a store result score @s hs.pitch run data get entity @s Rotation[1]
+execute as @e store result score @s hs.fireTick run data get entity @s Fire
 
-### 低生命获得DEBUFF ###
-execute as @a run scoreboard players operation @s hs.temp = @s hs.percentage
-execute as @a run scoreboard players operation @s hs.temp *= @s hs.health
-execute as @a run scoreboard players operation @s hs.temp /= @s hs.maxHealth
-execute as @a run function hardcore_survival:debuff/apply
+### 新玩家初始化 ###
+execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
+
+### 水分减少 ###
+execute as @a if score @s hs.water matches 1.. run scoreboard players add @s hs.waterTimer 1
+execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players remove @s hs.water 1
+execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players set @s hs.waterTimer 0
+execute as @a if score @s hs.water matches 0 run scoreboard players set @s hs.waterTimer 0
 
 ### 黑暗地区获得黑暗BUFF ###
 execute as @a at @s if predicate hardcore_survival:is_dark run scoreboard players add @s hs.darkTimer 1
@@ -63,3 +66,36 @@ execute as @a store result score @s hs.posX run data get entity @s Pos.[0]
 execute as @a store result score @s hs.posY run data get entity @s Pos.[1]
 execute as @a store result score @s hs.posZ run data get entity @s Pos.[2]
 execute as @a if data entity @s {SelectedItem:{id:"minecraft:compass"}} run title @s actionbar [{"text":"[ ","color":"aqua"},{"score":{"name":"@s","objective":"hs.posX"},"color":"gold","extra":[{"text":", ","color":"gray"}]},{"score":{"name":"@s","objective":"hs.posY"},"color":"gold","extra":[{"text":", ","color":"gray"}]},{"score":{"name":"@s","objective":"hs.posZ"},"color":"gold"},{"text":" ]","color":"aqua"}]
+
+### 低头显示水分 ###
+execute as @a if score @s hs.pitch matches 61..90 run title @s actionbar [{"text":"[","color":"yellow"},{"translate":"message.water","fallback":"水分 ","color":"aqua"},{"text":": ","color":"gray"},{"score":{"name":"@s","objective":"hs.water"},"color":"aqua","extra":[{"text":"%","color":"aqua"}]},{"text":"]","color":"yellow"}]
+
+### 喝水获得水分 ###
+execute as @a if score @s hs.usedMilkBucket matches 1.. run function hardcore_survival:drink/drink
+execute as @a if score @s hs.usedWaterBottle matches 1.. run function hardcore_survival:drink/drink
+
+### 离着火生物过近造成伤害 ###
+execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @e[distance=..1.5] unless score @s hs.fireTick matches 1.. run data merge entity @s {Fire:100s}
+execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @a[distance=..1.5] unless score @s hs.fireTick matches 1.. run damage @s 1 in_fire
+
+### 体力值效果 ###
+execute as @a if score @s hs.sprintTick matches 0 if score @s hs.jumpTimes matches 0 if score @s hs.sneakTick matches 0 if score @s hs.exhaustion matches 2.. run scoreboard players remove @s hs.exhaustion 2
+execute as @a if score @s hs.sprintTick matches 0 if score @s hs.jumpTimes matches 0 if score @s hs.sneakTick matches 1.. if score @s hs.exhaustion matches 2.. run scoreboard players remove @s hs.exhaustion 2
+execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players add @s hs.exhaustion 1
+execute as @a if score @s hs.sprintTick matches 1.. run effect give @s hunger 1 0 true
+execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players set @s hs.sprintTick 0
+execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players add @s hs.exhaustion 40
+execute as @a if score @s hs.jumpTimes matches 1.. run effect give @s hunger 1 0 true
+execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players set @s hs.jumpTimes 0
+execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s movement_speed modifier add exhaustion.move_speed -0.4 add_multiplied_total
+execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s jump_strength modifier add exhaustion.jump_strength -0.4 add_multiplied_total
+execute as @a if score @s hs.exhaustion matches ..900 run attribute @s movement_speed modifier remove exhaustion.move_speed
+execute as @a if score @s hs.exhaustion matches ..900 run attribute @s jump_strength modifier remove exhaustion.jump_strength
+execute as @a if score @s hs.exhaustion matches 1300.. run scoreboard players set @s hs.exhaustion 1300
+scoreboard players set @s hs.sneakTick 0
+
+### 低状态获得DEBUFF ###
+execute as @a run scoreboard players operation @s hs.temp = @s hs.percentage
+execute as @a run scoreboard players operation @s hs.temp *= @s hs.health
+execute as @a run scoreboard players operation @s hs.temp /= @s hs.maxHealth
+execute as @a run function hardcore_survival:debuff/apply

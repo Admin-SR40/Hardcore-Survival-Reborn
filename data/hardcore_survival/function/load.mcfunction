@@ -29,3 +29,14 @@ scoreboard objectives add hs.darkTimer dummy
 scoreboard objectives add hs.posX dummy
 scoreboard objectives add hs.posY dummy
 scoreboard objectives add hs.posZ dummy
+scoreboard objectives add hs.water dummy
+scoreboard objectives add hs.waterTimer dummy
+scoreboard objectives add hs.yaw dummy
+scoreboard objectives add hs.pitch dummy
+scoreboard objectives add hs.usedWaterBottle used:potion
+scoreboard objectives add hs.usedMilkBucket used:milk_bucket
+scoreboard objectives add hs.fireTick dummy
+scoreboard objectives add hs.sprintTick custom:sprint_one_cm
+scoreboard objectives add hs.exhaustion dummy
+scoreboard objectives add hs.jumpTimes custom:jump
+scoreboard objectives add hs.sneakTick custom:sneak_time
