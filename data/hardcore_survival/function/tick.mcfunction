@@ -15,7 +15,7 @@
 # All rights reserved. Do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.2 Alpha
+# Current Version: 0.4 Alpha
 # Compatible Minecraft Version: 1.21.3+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn (Currently private)
 
@@ -99,3 +99,33 @@ execute as @a run scoreboard players operation @s hs.temp = @s hs.percentage
 execute as @a run scoreboard players operation @s hs.temp *= @s hs.health
 execute as @a run scoreboard players operation @s hs.temp /= @s hs.maxHealth
 execute as @a run function hardcore_survival:debuff/apply
+
+### 生物加强 ###
+execute as @e[type=!player] run attribute @s attack_damage modifier add mob.attack_damage 0.5 add_multiplied_total
+execute as @e[type=!player] run attribute @s max_health modifier add mob.max_health 0.5 add_multiplied_total
+execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=#undead] run effect give @s instant_damage 3 9 true
+execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=!#undead,type=!creeper] run effect give @s instant_health 3 9 true
+execute as @e[type=!player] if entity @s[tag=!hs.mob] run tag @s add hs.mob
+execute as @e[type=creeper] unless data entity @s {powered:true} run data merge entity @s {Fuse:20s}
+execute as @e[type=creeper] if data entity @s {powered:true} run data merge entity @s {Fuse:15s}
+
+### 弓类效果 ###
+execute as @a if score @s hs.usedBow matches 1.. run function hardcore_survival:bow/bow
+execute as @a if score @s hs.usedCrossbow matches 1.. run function hardcore_survival:bow/crossbow
+execute as @a if score @s hs.bowTimer matches 1.. run scoreboard players remove @s hs.bowTimer 1
+execute as @a if score @s hs.bowTimer matches 0 run function hardcore_survival:bow/clear
+
+### 不死图腾 ###
+execute as @a if score @s hs.usedTotem matches 1.. run function hardcore_survival:totem/totem
+execute as @e if score @s hs.stunTimer matches 1.. run attribute @s movement_speed modifier add stun.movement_speed -1 add_multiplied_total
+execute as @e if score @s hs.stunTimer matches 1.. run attribute @s attack_damage modifier add stun.attack_damage -1 add_multiplied_total
+execute as @e if score @s hs.stunTimer matches 1.. run scoreboard players remove @s hs.stunTimer 1
+execute as @e if score @s hs.stunTimer matches 0 run attribute @s movement_speed modifier remove stun.movement_speed
+execute as @e if score @s hs.stunTimer matches 0 run attribute @s attack_damage modifier remove stun.attack_damage
+
+### 盾牌效果 ###
+execute as @a run function hardcore_survival:shield/hold
+execute as @a if score @s hs.usedShield matches 1.. run function hardcore_survival:shield/block
+
+### 怪物箭矢加强 ###
+execute as @e[type=!player] at @s run data merge entity @e[type=arrow,distance=..0.05,limit=1,sort=nearest,tag=!hs.player] {damage:3.5d}

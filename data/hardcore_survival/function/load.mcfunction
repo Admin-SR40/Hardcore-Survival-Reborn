@@ -40,3 +40,9 @@ scoreboard objectives add hs.sprintTick custom:sprint_one_cm
 scoreboard objectives add hs.exhaustion dummy
 scoreboard objectives add hs.jumpTimes custom:jump
 scoreboard objectives add hs.sneakTick custom:sneak_time
+scoreboard objectives add hs.usedBow used:bow
+scoreboard objectives add hs.usedCrossbow used:crossbow
+scoreboard objectives add hs.bowTimer dummy
+scoreboard objectives add hs.usedTotem used:totem_of_undying
+scoreboard objectives add hs.stunTimer dummy
+scoreboard objectives add hs.usedShield used:shield
