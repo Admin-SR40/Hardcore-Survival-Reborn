@@ -1,0 +1,22 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "aaa",
+        "a a",
+        "a a"
+    ],
+    "key": {
+        "a": [
+            "minecraft:iron_ingot"
+        ]
+    },
+    "result": {
+        "id": "minecraft:iron_leggings",
+        "components": {
+            "minecraft:attribute_modifiers":{"modifiers":[{"amount":3.0,"id":"minecraft:iron_leggings_armor","operation":"add_value","slot":"chest","type":"minecraft:armor"}]},
+            "max_damage": 150
+        }
+    },
+    "category": "equipment",
+    "show_notification": false
+}

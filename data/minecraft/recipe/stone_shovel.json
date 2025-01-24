@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "a": [
+            "minecraft:flint"
+        ],
+        "b": [
+            "minecraft:stick"
+        ]
+    },
+    "pattern": [
+        "a",
+        "b",
+        "b"
+    ],
+    "result": {
+        "id": "minecraft:stone_pickaxe",
+        "count": 1,
+        "components": {
+            "max_damage": 90
+        }
+    }
+}

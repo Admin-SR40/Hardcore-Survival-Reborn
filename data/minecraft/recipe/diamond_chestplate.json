@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        "a a",
+        "bab",
+        "bbb"
+    ],
+    "key": {
+        "a": [
+            "minecraft:amethyst_shard"
+        ],
+        "b": [
+            "minecraft:diamond"
+        ]
+    },
+    "result": {
+        "id": "minecraft:diamond_chestplate",
+        "count": 1,
+        "components": {
+            "max_damage": 352
+        }
+    },
+    "show_notification": false
+}

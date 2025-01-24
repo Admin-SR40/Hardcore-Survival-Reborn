@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        "ab",
+        "ac",
+        " c"
+    ],
+    "key": {
+        "a": [
+            "minecraft:amethyst_shard"
+        ],
+        "b": [
+            "minecraft:diamond"
+        ],
+        "c": [
+            "minecraft:blaze_rod"
+        ]
+    },
+    "result": {
+        "id": "minecraft:diamond_axe",
+        "count": 1,
+        "components": {
+            "max_damage": 1080
+        }
+    },
+    "show_notification": false
+}

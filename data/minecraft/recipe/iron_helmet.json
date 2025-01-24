@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "aaa",
+        "a a"
+    ],
+    "key": {
+        "a": [
+            "minecraft:iron_ingot"
+        ]
+    },
+    "result": {
+        "id": "minecraft:iron_helmet",
+        "components": {
+            "minecraft:attribute_modifiers":{"modifiers":[{"amount":2.0,"id":"minecraft:iron_helmet_armor","operation":"add_value","slot":"chest","type":"minecraft:armor"}]},
+            "max_damage": 110
+        }
+    },
+    "category": "equipment",
+    "show_notification": false
+}

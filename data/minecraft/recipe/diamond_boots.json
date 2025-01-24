@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        "b b",
+        "a a"
+    ],
+    "key": {
+        "a": [
+            "minecraft:amethyst_shard"
+        ],
+        "b": [
+            "minecraft:diamond"
+        ]
+    },
+    "result": {
+        "id": "minecraft:diamond_boots",
+        "count": 1,
+        "components": {
+            "max_damage": 286
+        }
+    },
+    "show_notification": false
+}

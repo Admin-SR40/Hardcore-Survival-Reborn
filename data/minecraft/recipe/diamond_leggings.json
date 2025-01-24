@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        "bab",
+        "a a",
+        "b b"
+    ],
+    "key": {
+        "a": [
+            "minecraft:amethyst_shard"
+        ],
+        "b": [
+            "minecraft:diamond"
+        ]
+    },
+    "result": {
+        "id": "minecraft:diamond_leggings",
+        "count": 1,
+        "components": {
+            "max_damage": 286
+        }
+    },
+    "show_notification": false
+}

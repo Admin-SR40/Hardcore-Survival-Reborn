@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "a"
+    ],
+    "key": {
+        "a": [
+            "minecraft:barrier"
+        ]
+    },
+    "result": {
+        "id": "minecraft:wooden_hoe",
+        "components": {
+            "damage": 64
+        }
+    }
+}

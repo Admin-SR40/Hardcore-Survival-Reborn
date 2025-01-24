@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "a a",
+        "a a"
+    ],
+    "key": {
+        "a": [
+            "minecraft:iron_ingot"
+        ]
+    },
+    "result": {
+        "id": "minecraft:iron_boots",
+        "components": {
+            "minecraft:attribute_modifiers":{"modifiers":[{"amount":2.0,"id":"minecraft:iron_boots_armor","operation":"add_value","slot":"chest","type":"minecraft:armor"}]},
+            "max_damage": 130
+        }
+    },
+    "category": "equipment",
+    "show_notification": false
+}
