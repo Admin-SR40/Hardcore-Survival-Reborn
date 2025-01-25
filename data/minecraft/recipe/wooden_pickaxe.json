@@ -11,7 +11,17 @@
     "result": {
         "id": "minecraft:wooden_pickaxe",
         "components": {
-            "damage": 64
+            "!max_damage": {},
+            "lore": [
+                '{
+                    "translate":"message.banned_item",
+                    "fallback": "该物品已被数据包禁用",
+                    "color": "red",
+                    "italic": false
+                }'
+            ],
+            "!attribute_modifiers": {},
+            "!tool": {}
         }
     }
 }

@@ -13,7 +13,15 @@
     "result": {
         "id": "minecraft:iron_chestplate",
         "components": {
-            "minecraft:attribute_modifiers":{"modifiers":[{"amount":3.0,"id":"minecraft:iron_chestplate_armor","operation":"add_value","slot":"chest","type":"minecraft:armor"}]},
+            "minecraft:attribute_modifiers": {
+                "modifiers": [{
+                    "amount":3.0, 
+                    "id":"hs.chestplate_armor",
+                    "operation":"add_value",
+                    "slot":"chest",
+                    "type":"minecraft:armor"
+                    }]
+                },
             "max_damage": 160
         }
     },

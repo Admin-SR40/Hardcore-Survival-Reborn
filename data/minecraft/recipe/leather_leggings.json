@@ -7,15 +7,15 @@
     ],
     "key": {
         "a": [
-            "minecraft:iron_ingot"
+            "minecraft:leather"
         ]
     },
     "result": {
-        "id": "minecraft:iron_leggings",
+        "id": "minecraft:leather_leggings",
         "components": {
             "minecraft:attribute_modifiers": {
                 "modifiers": [{
-                    "amount":3.0,
+                    "amount":1.0,
                     "id":"hs.leggings_armor",
                     "operation":"add_value",
                     "slot":"legs",

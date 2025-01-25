@@ -12,7 +12,15 @@
     "result": {
         "id": "minecraft:iron_helmet",
         "components": {
-            "minecraft:attribute_modifiers":{"modifiers":[{"amount":2.0,"id":"minecraft:iron_helmet_armor","operation":"add_value","slot":"chest","type":"minecraft:armor"}]},
+            "minecraft:attribute_modifiers": {
+                "modifiers": [{
+                    "amount":2.0,
+                    "id":"hs.helmet_armor",
+                    "operation":"add_value",
+                    "slot":"head",
+                    "type":"minecraft:armor"
+                    }]
+                },
             "max_damage": 110
         }
     },

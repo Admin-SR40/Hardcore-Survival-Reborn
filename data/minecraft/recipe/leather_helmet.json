@@ -2,27 +2,26 @@
     "type": "crafting_shaped",
     "pattern": [
         "aaa",
-        "a a",
         "a a"
     ],
     "key": {
         "a": [
-            "minecraft:iron_ingot"
+            "minecraft:leather"
         ]
     },
     "result": {
-        "id": "minecraft:iron_leggings",
+        "id": "minecraft:leather_helmet",
         "components": {
             "minecraft:attribute_modifiers": {
                 "modifiers": [{
-                    "amount":3.0,
-                    "id":"hs.leggings_armor",
+                    "amount":0.75,
+                    "id":"hs.helmet_armor",
                     "operation":"add_value",
-                    "slot":"legs",
+                    "slot":"head",
                     "type":"minecraft:armor"
                     }]
                 },
-            "max_damage": 150
+            "max_damage": 110
         }
     },
     "category": "equipment",

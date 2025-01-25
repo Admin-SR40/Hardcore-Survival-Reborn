@@ -1,0 +1,9 @@
+{
+    "type": "smithing_transform",
+    "base": "diamond_chestplate",
+    "addition": "nether_star",
+    "template": "netherite_upgrade_smithing_template",
+    "result": {
+        "id": "netherite_chestplate"
+    }
+}

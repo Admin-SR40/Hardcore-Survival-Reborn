@@ -17,7 +17,7 @@
 # Thanks for playing Hardcore Survival Reborn!
 # Current Version: 0.4 Alpha
 # Compatible Minecraft Version: 1.21.3+
-# GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn (Currently private)
+# GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
 # Found bugs? Create an Issue on GitHub or email me at 402757046@qq.com!
 # Sorry, but all explanations are in Chinese.
@@ -59,7 +59,7 @@ execute as @a at @s if predicate hardcore_survival:is_dark run scoreboard player
 execute as @a at @s unless predicate hardcore_survival:is_dark run scoreboard players remove @s hs.darkTimer 1
 execute as @a if score @s hs.darkTimer matches ..-601 run scoreboard players set @s hs.darkTimer -600
 execute as @a if score @s hs.darkTimer matches 601.. run scoreboard players set @s hs.darkTimer 600
-execute as @a at @s if predicate hardcore_survival:is_dark if score @s hs.darkTimer matches ..-1 run effect give @s darkness 3 0 true
+execute as @a at @s if predicate hardcore_survival:is_dark unless dimension the_end if score @s hs.darkTimer matches ..-1 run effect give @s darkness 3 0 true
 
 ### 手持指南针显示坐标 ###
 execute as @a store result score @s hs.posX run data get entity @s Pos.[0]
@@ -129,3 +129,20 @@ execute as @a if score @s hs.usedShield matches 1.. run function hardcore_surviv
 
 ### 怪物箭矢加强 ###
 execute as @e[type=!player] at @s run data merge entity @e[type=arrow,distance=..0.05,limit=1,sort=nearest,tag=!hs.player] {damage:3.5d}
+
+### 重锤减速 ###
+execute as @a run function hardcore_survival:mace/hold
+
+### 末影龙不停留 ###
+execute as @e[type=ender_dragon] if data entity @s {DragonPhase:3} run data merge entity @s {DragonPhase:0}
+
+### 末影人主动攻击 ###
+execute as @e[type=enderman] at @s if entity @a[distance=..4] run data modify entity @s AngryAt set from entity @p UUID
+
+### 末影水晶免疫投掷物 ###
+execute as @e[type=end_crystal] at @s run execute as @e[type=#minecraft:projectile,distance=..5] run data merge entity @s {Motion:[0, 0, 0,]}
+
+### 玩家射出箭矢削弱 ###
+execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {crit:false}
+execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {shake:true}
+execute as @e[type=#minecraft:arrows] run data merge entity @s {pickup:0b}
