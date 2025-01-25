@@ -46,6 +46,7 @@ scoreboard objectives add hs.bowTimer dummy
 scoreboard objectives add hs.usedTotem used:totem_of_undying
 scoreboard objectives add hs.stunTimer dummy
 scoreboard objectives add hs.usedShield used:shield
+scoreboard objectives add hs.fireTimer dummy
 
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health

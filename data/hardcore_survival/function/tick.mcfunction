@@ -29,7 +29,7 @@
 ### 受击后受到伤害增加 ###
 execute as @a if score @s hs.takeDamage matches 30.. if data entity @s {HurtTime:10s} run function hardcore_survival:wound/take
 execute as @a if score @s hs.woundLevel matches 1.. run scoreboard players add @s hs.woundTimer 1
-execute as @a if score @s hs.woundLevel matches 1.. if score @s hs.woundTimer matches 1200.. run scoreboard players remove @s hs.woundLevel 1
+execute as @a if score @s hs.woundLevel matches 1.. if score @s hs.woundTimer matches 600.. run scoreboard players remove @s hs.woundLevel 1
 execute as @a unless score @s hs.woundLevel matches 1.. run scoreboard players set @s hs.woundTimer 0
 
 ### 死亡重置 ###
@@ -59,7 +59,7 @@ execute as @a at @s if predicate hardcore_survival:is_dark run scoreboard player
 execute as @a at @s unless predicate hardcore_survival:is_dark run scoreboard players remove @s hs.darkTimer 1
 execute as @a if score @s hs.darkTimer matches ..-601 run scoreboard players set @s hs.darkTimer -600
 execute as @a if score @s hs.darkTimer matches 601.. run scoreboard players set @s hs.darkTimer 600
-execute as @a at @s if predicate hardcore_survival:is_dark unless dimension the_end if score @s hs.darkTimer matches ..-1 run effect give @s darkness 3 0 true
+execute as @a at @s if predicate hardcore_survival:is_dark unless dimension the_end unless data entity @s {active_effects:[{id:"minecraft:night_vision"}]} if score @s hs.darkTimer matches ..-1 run effect give @s darkness 3 0 true
 
 ### 手持指南针显示坐标 ###
 execute as @a store result score @s hs.posX run data get entity @s Pos.[0]
@@ -75,7 +75,10 @@ execute as @a if score @s hs.usedMilkBucket matches 1.. run function hardcore_su
 execute as @a if score @s hs.usedWaterBottle matches 1.. run function hardcore_survival:drink/drink
 
 ### 离着火生物过近造成伤害 ###
-execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @e[distance=..1.5] unless score @s hs.fireTick matches 1.. run data merge entity @s {Fire:100s}
+execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @e[distance=..1.5] unless score @s hs.fireTick matches 1.. run scoreboard players add @s hs.fireTimer 1
+execute as @e if score @s hs.fireTimer matches 30.. run data merge entity @s {Fire:100s}
+execute as @e if score @s hs.fireTimer matches 30.. run scoreboard players set @s hs.fireTimer 0
+execute as @e if score @s hs.fireTick matches 0 run scoreboard players set @s hs.fireTimer 0
 execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @a[distance=..1.5] unless score @s hs.fireTick matches 1.. run damage @s 1 in_fire
 
 ### 体力值效果 ###
@@ -102,7 +105,7 @@ execute as @a run function hardcore_survival:debuff/apply
 
 ### 生物加强 ###
 execute as @e[type=!player] run attribute @s attack_damage modifier add mob.attack_damage 0.5 add_multiplied_total
-execute as @e[type=!player] run attribute @s max_health modifier add mob.max_health 0.5 add_multiplied_total
+execute as @e[type=!player] run attribute @s[type=!creeper] max_health modifier add mob.max_health 0.5 add_multiplied_total
 execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=#undead] run effect give @s instant_damage 3 9 true
 execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=!#undead,type=!creeper] run effect give @s instant_health 3 9 true
 execute as @e[type=!player] if entity @s[tag=!hs.mob] run tag @s add hs.mob
@@ -146,3 +149,6 @@ execute as @e[type=end_crystal] at @s run execute as @e[type=#minecraft:projecti
 execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {crit:false}
 execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {shake:true}
 execute as @e[type=#minecraft:arrows] run data merge entity @s {pickup:0b}
+
+### 怪物不掉落装备 ###
+execute as @e[type=!player] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
