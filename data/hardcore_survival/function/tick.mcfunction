@@ -15,8 +15,8 @@
 # All rights reserved. Do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.4 Alpha
-# Compatible Minecraft Version: 1.21.3+
+# Current Version: 0.5 Alpha
+# Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
 # Found bugs? Create an Issue on GitHub or email me at 402757046@qq.com!
@@ -54,6 +54,13 @@ execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players rem
 execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players set @s hs.waterTimer 0
 execute as @a if score @s hs.water matches 0 run scoreboard players set @s hs.waterTimer 0
 
+### 水中蹲下喝水 ###
+execute as @a at @s if score @s hs.sneakTick matches 1.. if block ~ ~ ~ water run scoreboard players add @s hs.drinkTimer 1
+execute as @a if score @s hs.drinkTimer matches 20.. run scoreboard players add @s hs.water 2
+execute as @a if score @s hs.water matches 100.. run scoreboard players set @s hs.water 100
+execute as @a if score @s hs.drinkTimer matches 20.. run scoreboard players set @s hs.drinkTimer 0
+execute as @a if score @s hs.sneakTick matches 1.. run scoreboard players set @s hs.sneakTick 0
+
 ### 黑暗地区获得黑暗BUFF ###
 execute as @a at @s if predicate hardcore_survival:is_dark run scoreboard players add @s hs.darkTimer 1
 execute as @a at @s unless predicate hardcore_survival:is_dark run scoreboard players remove @s hs.darkTimer 1
@@ -75,11 +82,11 @@ execute as @a if score @s hs.usedMilkBucket matches 1.. run function hardcore_su
 execute as @a if score @s hs.usedWaterBottle matches 1.. run function hardcore_survival:drink/drink
 
 ### 离着火生物过近造成伤害 ###
-execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @e[distance=..1.5] unless score @s hs.fireTick matches 1.. run scoreboard players add @s hs.fireTimer 1
+execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @e[distance=..1.25] unless score @s hs.fireTick matches 1.. run scoreboard players add @s hs.fireTimer 1
 execute as @e if score @s hs.fireTimer matches 30.. run data merge entity @s {Fire:100s}
 execute as @e if score @s hs.fireTimer matches 30.. run scoreboard players set @s hs.fireTimer 0
 execute as @e if score @s hs.fireTick matches 0 run scoreboard players set @s hs.fireTimer 0
-execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @a[distance=..1.5] unless score @s hs.fireTick matches 1.. run damage @s 1 in_fire
+execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @a[distance=..1.25] unless score @s hs.fireTick matches 1.. run damage @s 1 in_fire
 
 ### 体力值效果 ###
 execute as @a if score @s hs.sprintTick matches 0 if score @s hs.jumpTimes matches 0 if score @s hs.sneakTick matches 0 if score @s hs.exhaustion matches 2.. run scoreboard players remove @s hs.exhaustion 2

@@ -1,0 +1,25 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "ABA",
+        "BCB",
+        "ABA"
+    ],
+    "key": {
+        "A": [
+            "amethyst_shard"
+        ],
+        "B": [
+            "diamond"
+        ],
+        "C": [
+            "netherite_ingot"
+        ]
+    },
+    "result": {
+        "id": "netherite_upgrade_smithing_template",
+        "count": 1
+    },
+    "category": "misc",
+    "show_notification": false
+}
