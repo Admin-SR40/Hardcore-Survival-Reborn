@@ -15,7 +15,7 @@ Everything is refactored, better performance and game experience is waiting for 
 - No more requirements, that's easy!
 
 ## How to use
-1. Open your world folder, the path should be `.minecraft/saves/` or `.world/`.
+1. Open your world folder, the path should be `.minecraft/saves/world` or `.world/`.
 2. Open the datapacks folder.
 3. Drag this datapack into it.
 4. Join the game, and run `/datapack enable "file/Hardcore Survival Reborn"`.
