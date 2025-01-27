@@ -29,5 +29,5 @@ Everything is refactored, better performance and game experience is waiting for 
 
 ## Bug report
 If you find any bugs, please:
-- Create a [Issue](https://github.com/Admin_SR40/Hardcore-Survival-Reborn/issues/new).
+- Create a [Issue](https://github.com/Admin-SR40/Hardcore-Survival-Reborn/issues/new).
 - Tell me from an email.
