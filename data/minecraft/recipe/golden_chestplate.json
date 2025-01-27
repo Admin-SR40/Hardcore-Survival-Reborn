@@ -1,39 +1,35 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "pattern": [
-        "a a",
-        "bab",
-        "bbb"
-    ],
+    "type": "crafting_shaped",
     "key": {
-        "a": [
-            "minecraft:amethyst_shard"
-        ],
-        "b": [
-            "minecraft:diamond"
+        "A": [
+            "minecraft:gold_ingot"
         ]
     },
+    "pattern": [
+        "A A",
+        "AAA",
+        "AAA"
+    ],
     "result": {
-        "id": "minecraft:diamond_chestplate",
+        "id": "minecraft:golden_chestplate",
         "count": 1,
         "components": {
-            "max_damage": 352,
-            "minecraft:attribute_modifiers": {
+            "max_damage": 56,
+            "attribute_modifiers": {
                 "modifiers": [
                     {
                         "type": "minecraft:armor",
                         "slot": "chest",
                         "operation": "add_value",
-                        "amount": 5,
-                        "id": "diamond_chestplate_armor"
+                        "amount": 2,
+                        "id": "golden_chestplate_armor"
                     },
                     {
                         "type": "minecraft:armor_toughness",
                         "slot": "chest",
                         "operation": "add_value",
-                        "amount": 1,
-                        "id": "diamond_chestplate_armor_toughness"
+                        "amount": 0.5,
+                        "id": "golden_chestplate_armor_toughness"
                     }
                 ]
             },
@@ -41,6 +37,5 @@
                 "craft":  true
             }
         }
-    },
-    "show_notification": false
+    }
 }

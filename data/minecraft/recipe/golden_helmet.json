@@ -1,38 +1,34 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "pattern": [
-        "bab",
-        "a a"
-    ],
+    "type": "crafting_shaped",
     "key": {
-        "a": [
-            "minecraft:amethyst_shard"
-        ],
-        "b": [
-            "minecraft:diamond"
+        "A": [
+            "minecraft:gold_ingot"
         ]
     },
+    "pattern": [
+        "AAA",
+        "A A"
+    ],
     "result": {
-        "id": "minecraft:diamond_helmet",
+        "id": "minecraft:golden_helmet",
         "count": 1,
         "components": {
-            "max_damage": 242,
+            "max_damage": 33,
             "attribute_modifiers": {
                 "modifiers": [
                     {
                         "type": "minecraft:armor",
                         "slot": "head",
                         "operation": "add_value",
-                        "amount": 3,
-                        "id": "diamond_helmet_armor"
+                        "amount": 1,
+                        "id": "golden_helmet_armor"
                     },
                     {
                         "type": "minecraft:armor_toughness",
                         "slot": "head",
                         "operation": "add_value",
-                        "amount": 1,
-                        "id": "diamond_helmet_armor_toughness"
+                        "amount": 0.5,
+                        "id": "golden_helmet_armor_toughness"
                     }
                 ]
             },
@@ -40,6 +36,5 @@
                 "craft":  true
             }
         }
-    },
-    "show_notification": false
+    }
 }

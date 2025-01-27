@@ -18,7 +18,28 @@
         "id": "minecraft:diamond_leggings",
         "count": 1,
         "components": {
-            "max_damage": 286
+            "max_damage": 328,
+            "attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "type": "minecraft:armor",
+                        "slot": "legs",
+                        "operation": "add_value",
+                        "amount": 4,
+                        "id": "diamond_leggings_armor"
+                    },
+                    {
+                        "type": "minecraft:armor_toughness",
+                        "slot": "legs",
+                        "operation": "add_value",
+                        "amount": 1,
+                        "id": "diamond_leggings_armor_toughness"
+                    }
+                ]
+            },
+            "custom_data": {
+                "craft":  true
+            }
         }
     },
     "show_notification": false

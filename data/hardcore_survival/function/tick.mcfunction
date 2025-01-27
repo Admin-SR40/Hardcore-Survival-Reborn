@@ -159,3 +159,7 @@ execute as @e[type=#minecraft:arrows] run data merge entity @s {pickup:0b}
 
 ### 怪物不掉落装备 ###
 execute as @e[type=!player] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
+
+### 非法物品替换 ###
+execute as @a store result score @s hs.temp run clear @s #equipments[!custom_data] 0
+execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/replace

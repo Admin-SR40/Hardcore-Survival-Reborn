@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "a": [
+            "flint"
+        ]
+    },
+    "pattern": [
+        "aa",
+        "aa"
+    ],
+    "result": {
+        "id": "minecraft:cobblestone",
+        "count": 1
+    }
+}

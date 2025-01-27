@@ -4,6 +4,12 @@
     "addition": "nether_star",
     "template": "netherite_upgrade_smithing_template",
     "result": {
-        "id": "netherite_shovel"
+        "id": "netherite_shovel",
+        "components": {
+            "max_damage": 1600,
+            "custom_data": {
+                "craft": true
+            }
+        }
     }
 }

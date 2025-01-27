@@ -4,6 +4,37 @@
     "addition": "nether_star",
     "template": "netherite_upgrade_smithing_template",
     "result": {
-        "id": "netherite_helmet"
+        "id": "netherite_helmet",
+        "components": {
+            "max_damage": 271,
+            "attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "amount": 4,
+                        "id": "netherite_helmet_armor",
+                        "operation": "add_value",
+                        "type": "armor",
+                        "slot": "head"
+                    },
+                    {
+                        "amount": 2,
+                        "id": "netherite_helmet_armor_toughness",
+                        "operation": "add_value",
+                        "type": "armor_toughness",
+                        "slot": "head"
+                    },
+                    {
+                        "amount": 0.05,
+                        "id": "netherite_helmet_knockback_resistance",
+                        "operation": "add_value",
+                        "type": "knockback_resistance",
+                        "slot": "head"
+                    }
+                ]
+            },
+            "custom_data": {
+                "craft": true
+            }
+        }
     }
 }

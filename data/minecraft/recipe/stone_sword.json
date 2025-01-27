@@ -19,10 +19,13 @@
         "b"
     ],
     "result": {
-        "id": "minecraft:stone_pickaxe",
+        "id": "minecraft:stone_sword",
         "count": 1,
         "components": {
-            "max_damage": 90
+            "max_damage": 90,
+            "custom_data": {
+                "craft":  true
+            }
         }
     }
 }

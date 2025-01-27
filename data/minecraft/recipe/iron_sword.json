@@ -1,23 +1,23 @@
 {
-    "type": "minecraft:crafting_shaped",
+    "type": "crafting_shaped",
     "key": {
-        "a": [
-            "minecraft:flint"
+        "A": [
+            "minecraft:iron_ingot"
         ],
-        "b": [
+        "B": [
             "minecraft:stick"
         ]
     },
     "pattern": [
-        "a",
-        "b",
-        "b"
+        "A",
+        "A",
+        "B"
     ],
     "result": {
-        "id": "minecraft:stone_shovel",
+        "id": "minecraft:iron_sword",
         "count": 1,
         "components": {
-            "max_damage": 90,
+            "max_damage": 180,
             "custom_data": {
                 "craft":  true
             }

@@ -4,6 +4,37 @@
     "addition": "nether_star",
     "template": "netherite_upgrade_smithing_template",
     "result": {
-        "id": "netherite_boots"
+        "id": "netherite_boots",
+        "components": {
+            "max_damage": 320,
+            "attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "amount": 4,
+                        "id": "netherite_boots_armor",
+                        "operation": "add_value",
+                        "type": "armor",
+                        "slot": "feet"
+                    },
+                    {
+                        "amount": 2,
+                        "id": "netherite_boots_armor_toughness",
+                        "operation": "add_value",
+                        "type": "armor_toughness",
+                        "slot": "feet"
+                    },
+                    {
+                        "amount": 0.05,
+                        "id": "netherite_boots_knockback_resistance",
+                        "operation": "add_value",
+                        "type": "knockback_resistance",
+                        "slot": "feet"
+                    }
+                ]
+            },
+            "custom_data": {
+                "craft": true
+            }
+        } 
     }
 }
