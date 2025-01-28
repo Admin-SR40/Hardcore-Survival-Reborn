@@ -83,4 +83,28 @@ execute as @s if score @s hs.temp matches 1.. run give @s netherite_boots[max_da
 execute as @s store result score @s hs.temp run clear @s elytra[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s elytra[!enchantable,!enchantments,max_damage=320,custom_data={"craft":true}]
 
+execute as @s store result score @s hs.temp run clear @s shears[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s shears[max_damage=128,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s trident[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s trident[max_damage=240,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s bow[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s bow[max_damage=320,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s crossbow[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s crossbow[max_damage=400,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s shield[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s shield[max_damage=240,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s mace[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s mace[max_damage=250,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s brush[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s brush[max_damage=32,custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s flint_and_steel[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s flint_and_steel[max_damage=32,custom_data={"craft":true}]
+
 scoreboard players set @s hs.temp 0

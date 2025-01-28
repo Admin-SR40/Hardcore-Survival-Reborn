@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "W": "#minecraft:wooden_tool_materials",
+        "o": "minecraft:iron_ingot"
+    },
+    "pattern": [
+        "WoW",
+        "WWW",
+        " W "
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:shield",
+        "components": {
+            "max_damage": 240,
+            "custom_data": {
+                "craft": true
+            }
+        }
+    }
+}

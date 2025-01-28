@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": "minecraft:iron_ingot"
+    },
+    "pattern": [
+        " #",
+        "# "
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:shears",
+        "components": {
+            "max_damage": 128,
+            "custom_data": {
+                "craft": true
+            }
+        }
+    }
+  }

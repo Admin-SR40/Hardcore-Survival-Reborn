@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": "minecraft:heavy_core",
+        "I": "minecraft:breeze_rod"
+    },
+    "pattern": [
+        "#",
+        "I"
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:mace",
+        "components": {
+            "max_damage": 250,
+            "custom_data": {
+                "craft": true
+            }
+        }
+    }
+  }

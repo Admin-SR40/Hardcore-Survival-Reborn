@@ -15,7 +15,7 @@
 # All rights reserved. Do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.5 Alpha
+# Current Version: 0.6 Alpha
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 

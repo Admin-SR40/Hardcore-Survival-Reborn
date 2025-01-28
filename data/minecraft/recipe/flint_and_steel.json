@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "equipment",
+    "ingredients": [
+        "minecraft:iron_ingot",
+        "minecraft:flint"
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:flint_and_steel",
+        "components": {
+            "max_damage": 32,
+            "custom_data": {
+                "craft": true
+            }
+        }
+    }
+}

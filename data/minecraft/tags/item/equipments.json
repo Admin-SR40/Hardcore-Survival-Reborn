@@ -36,6 +36,14 @@
         "minecraft:netherite_chestplate",
         "minecraft:netherite_leggings",
         "minecraft:netherite_boots",
-        "minecraft:elytra"
+        "minecraft:elytra",
+        "minecraft:shears",
+        "minecraft:trident",
+        "minecraft:bow",
+        "minecraft:crossbow",
+        "minecraft:shield",
+        "minecraft:mace",
+        "minecraft:brush",
+        "flint_and_steel"
     ]
 }
