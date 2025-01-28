@@ -12,7 +12,7 @@
 
 # Hardcore Survival Reborn
 # Created by Admin_SR40
-# All rights reserved. Do not distribute.
+# All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
 # Current Version: 0.6 Alpha

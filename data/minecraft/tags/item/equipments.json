@@ -43,7 +43,7 @@
         "minecraft:crossbow",
         "minecraft:shield",
         "minecraft:mace",
-        "minecraft:brush",
-        "flint_and_steel"
+        "flint_and_steel",
+        "minecraft:brush"
     ]
 }

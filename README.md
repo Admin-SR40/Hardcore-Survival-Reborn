@@ -13,7 +13,6 @@ Everything is refactored, better performance and game experience is waiting for 
 ## Update info
 - Latest version: **0.6 Alpha**
 - Date: **25/1/28 17:20** (UTC +08:00)
-- Updated by: **Admin_SR40**
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!

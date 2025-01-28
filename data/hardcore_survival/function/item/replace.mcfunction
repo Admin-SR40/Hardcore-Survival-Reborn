@@ -107,4 +107,4 @@ execute as @s if score @s hs.temp matches 1.. run give @s brush[max_damage=32,cu
 execute as @s store result score @s hs.temp run clear @s flint_and_steel[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s flint_and_steel[max_damage=32,custom_data={"craft":true}]
 
-scoreboard players set @s hs.temp 0
+scoreboard players set @s hs.temp -1
