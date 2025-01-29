@@ -15,7 +15,7 @@
 # All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.6 Alpha
+# Current Version: 0.7 Alpha
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
@@ -49,9 +49,11 @@ execute as @e store result score @s hs.fireTick run data get entity @s Fire
 execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
 
 ### 水分减少 ###
-execute as @a if score @s hs.water matches 1.. run scoreboard players add @s hs.waterTimer 1
-execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players remove @s hs.water 1
-execute as @a if score @s hs.waterTimer matches 720.. run scoreboard players set @s hs.waterTimer 0
+execute as @a if score @s hs.water matches 1.. run scoreboard players add @s hs.waterTimer 2
+execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players add @s hs.waterTimer 2
+execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players add @s hs.waterTimer 20
+execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players remove @s hs.water 1
+execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players set @s hs.waterTimer 0
 execute as @a if score @s hs.water matches 0 run scoreboard players set @s hs.waterTimer 0
 
 ### 水中蹲下喝水 ###
@@ -97,9 +99,13 @@ execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players set @
 execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players add @s hs.exhaustion 40
 execute as @a if score @s hs.jumpTimes matches 1.. run effect give @s hunger 1 0 true
 execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players set @s hs.jumpTimes 0
-execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s movement_speed modifier add exhaustion.move_speed -0.4 add_multiplied_total
+execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s movement_speed modifier add exhaustion.movement_speed -0.4 add_multiplied_total
 execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s jump_strength modifier add exhaustion.jump_strength -0.4 add_multiplied_total
-execute as @a if score @s hs.exhaustion matches ..900 run attribute @s movement_speed modifier remove exhaustion.move_speed
+execute as @a if score @s hs.exhaustion matches 1200.. run title @s[tag=!hs.tiredReminder] title ""
+execute as @a if score @s hs.exhaustion matches 1200.. run title @s[tag=!hs.tiredReminder] subtitle [{"translate":"message.tired_1","fallback":"你累了, ","color":"yellow"},{"translate":"message.tired_2","fallback":"休息一会吧!","color":"yellow"}]
+execute as @a if score @s hs.exhaustion matches 1200.. run tag @s add hs.tiredReminder
+execute as @a if score @s hs.exhaustion matches ..900 run tag @s remove hs.tiredReminder
+execute as @a if score @s hs.exhaustion matches ..900 run attribute @s movement_speed modifier remove exhaustion.movement_speed
 execute as @a if score @s hs.exhaustion matches ..900 run attribute @s jump_strength modifier remove exhaustion.jump_strength
 execute as @a if score @s hs.exhaustion matches 1300.. run scoreboard players set @s hs.exhaustion 1300
 scoreboard players set @s hs.sneakTick 0
@@ -163,3 +169,10 @@ execute as @e[type=!player] run data merge entity @s {ArmorDropChances:[0.0f, 0.
 ### 非法物品替换 ###
 execute as @a store result score @s hs.temp run clear @s #equipments[!custom_data] 0
 execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/replace
+
+### 经验流失 ###
+execute as @a store result score @s hs.xpLevels run xp query @s levels
+execute as @a store result score @s hs.xpAmount run xp query @s points
+execute as @a if score @s hs.xpLevels matches 30.. if score @s hs.xpAmount matches 1.. run scoreboard players add @s hs.xpTimer 1
+execute as @a if score @s hs.xpTimer matches 20.. run xp add @s -1 points
+execute as @a if score @s hs.xpTimer matches 20.. run scoreboard players set @s hs.xpTimer 0

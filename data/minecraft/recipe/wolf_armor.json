@@ -1,0 +1,37 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "A": [
+            "armadillo_scute"
+        ]
+    },
+    "pattern": [
+        "A  ",
+        "AAA",
+        "A A"
+    ],
+    "result": {
+        "id": "wolf_armor",
+        "components": {
+            "max_damage": 16,
+            "attribute_modifiers": {
+                "modifiers": [
+                    {
+                        "type": "armor",
+                        "amount": 5,
+                        "operation": "add_value",
+                        "id": "wolf_armor",
+                        "slot": "any"
+                    },
+                    {
+                        "type": "armor_toughness",
+                        "amount": 2,
+                        "operation": "add_value",
+                        "id": "wolf_armor_toughness",
+                        "slot": "any"
+                    }
+                ]
+            }
+        }
+    }
+}

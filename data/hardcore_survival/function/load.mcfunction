@@ -48,7 +48,9 @@ scoreboard objectives add hs.stunTimer dummy
 scoreboard objectives add hs.usedShield used:shield
 scoreboard objectives add hs.fireTimer dummy
 scoreboard objectives add hs.drinkTimer dummy
-
+scoreboard objectives add hs.xpLevels dummy
+scoreboard objectives add hs.xpAmount dummy
+scoreboard objectives add hs.xpTimer dummy
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health
 scoreboard objectives modify hs.health displayname "§c❤"

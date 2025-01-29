@@ -11,8 +11,8 @@ Everything is refactored, better performance and game experience is waiting for 
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **0.6 Alpha**
-- Date: **25/1/28 17:20** (UTC +08:00)
+- Latest version: **0.7 Alpha**
+- Date: **25/1/29 19:30** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
