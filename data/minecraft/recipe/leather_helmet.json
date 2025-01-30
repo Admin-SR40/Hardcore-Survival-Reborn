@@ -21,7 +21,10 @@
                     "type":"minecraft:armor"
                     }]
                 },
-            "max_damage": 110
+            "max_damage": 36,
+            "custom_data": {
+                "craft": true
+            }
         }
     },
     "category": "equipment",

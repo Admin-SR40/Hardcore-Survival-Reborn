@@ -62,6 +62,24 @@ execute as @s if score @s hs.temp matches 1.. run give @s iron_leggings[max_dama
 execute as @s store result score @s hs.temp run clear @s iron_boots[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s iron_boots[max_damage=130,attribute_modifiers={modifiers:[{amount:2,id:"iron_boots_armor",operation:"add_value",type:"armor",slot:"feet"}]},custom_data={"craft":true}]
 
+execute as @s store result score @s hs.temp run clear @s leather_helmet[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s leather_helmet[max_damage=36,attribute_modifiers={modifiers:[{amount:0.75,id:"leather_helmet_armor",operation:"add_value",type:"armor",slot:"head"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s leather_chestplate[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s leather_chestplate[max_damage=50,attribute_modifiers={modifiers:[{amount:1,id:"leather_chestplate_armor",operation:"add_value",type:"armor",slot:"chest"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s leather_leggings[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s leather_leggings[max_damage=45,attribute_modifiers={modifiers:[{amount:1,id:"leather_leggings_armor",operation:"add_value",type:"armor",slot:"legs"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s leather_boots[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s leather_boots[max_damage=40,attribute_modifiers={modifiers:[{amount:0.75,id:"leather_boots_armor",operation:"add_value",type:"armor",slot:"feet"}]},custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s chainmail_helmet[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s chainmail_helmet[max_damage=110,attribute_modifiers={modifiers:[{amount:1.5,id:"leather_helmet_armor",operation:"add_value",type:"armor",slot:"head"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s chainmail_chestplate[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s chainmail_chestplate[max_damage=160,attribute_modifiers={modifiers:[{amount:2,id:"leather_chestplate_armor",operation:"add_value",type:"armor",slot:"chest"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s chainmail_leggings[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s chainmail_leggings[max_damage=150,attribute_modifiers={modifiers:[{amount:2,id:"leather_leggings_armor",operation:"add_value",type:"armor",slot:"legs"}]},custom_data={"craft":true}]
+execute as @s store result score @s hs.temp run clear @s chainmail_boots[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s chainmail_boots[max_damage=130,attribute_modifiers={modifiers:[{amount:1.5,id:"leather_boots_armor",operation:"add_value",type:"armor",slot:"feet"}]},custom_data={"craft":true}]
+
 execute as @s store result score @s hs.temp run clear @s golden_helmet[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s golden_helmet[max_damage=33,attribute_modifiers={modifiers:[{amount:1,id:"golden_helmet_armor",operation:"add_value",type:"armor",slot:"head"},{amount:0.5,id:"golden_helmet_armor_toughness",operation:"add_value",type:"armor_toughness",slot:"head"}]},custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s golden_chestplate[!custom_data] 1
@@ -106,5 +124,8 @@ execute as @s if score @s hs.temp matches 1.. run give @s brush[max_damage=32,cu
 
 execute as @s store result score @s hs.temp run clear @s flint_and_steel[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s flint_and_steel[max_damage=32,custom_data={"craft":true}]
+
+execute as @a store result score @s hs.temp run clear @s #equipments[!custom_data] 0
+execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/equipments
 
 scoreboard players set @s hs.temp -1

@@ -15,7 +15,7 @@
 # All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.7 Alpha
+# Current Version: 0.8 Alpha
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
@@ -168,7 +168,9 @@ execute as @e[type=!player] run data merge entity @s {ArmorDropChances:[0.0f, 0.
 
 ### 非法物品替换 ###
 execute as @a store result score @s hs.temp run clear @s #equipments[!custom_data] 0
-execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/replace
+execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/equipments
+execute as @a store result score @s hs.temp run clear @s #foods[!custom_data] 0
+execute as @a if score @s hs.temp matches 1.. run function hardcore_survival:item/foods
 
 ### 经验流失 ###
 execute as @a store result score @s hs.xpLevels run xp query @s levels

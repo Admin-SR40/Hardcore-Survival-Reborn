@@ -11,8 +11,8 @@ Everything is refactored, better performance and game experience is waiting for 
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **0.7 Alpha**
-- Date: **25/1/29 19:30** (UTC +08:00)
+- Latest version: **0.8 Alpha**
+- Date: **25/1/30 15:00** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
@@ -26,10 +26,10 @@ Everything is refactored, better performance and game experience is waiting for 
 5. All done! Good job!
 
 ## Good to know
-- You can run other datapacks at the same time, but I'm **not** recommend to do so!
-- If you accidently broke something, just reload by using `/reload`, it should be fine!
-- Without my permission, you **cannot** distribute the datapack!
-- Modify the datapack for yourself is okay, but you **can't** claim that you made the pack!
+- You can run other datapacks at the same time, but I'm **not** recommend to do so.
+- If you accidently broke something, just reload by using `/reload`, it should be fine.
+- You **cannot** distribute the datapack without my permission.
+- Modify the datapack for yourself is okay, but you **can't** claim that you made the pack.
 
 ## Bug report
 If you find any bugs, please:

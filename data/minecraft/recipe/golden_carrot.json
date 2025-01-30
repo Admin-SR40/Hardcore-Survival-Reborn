@@ -1,0 +1,45 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "#": "minecraft:gold_nugget",
+        "X": "minecraft:carrot"
+    },
+    "pattern": [
+        "###",
+        "#X#",
+        "###"
+    ],
+    "result": {
+        "count": 1,
+        "id": "minecraft:golden_carrot",
+        "components": {
+            "food": {
+                "nutrition": 6,
+                "saturation": 10,
+                "can_always_eat": false
+            },
+            "consumable": {
+                "animation": "eat",
+                "consume_seconds": 1.6,
+                "on_consume_effects": [
+                    {
+                        "type": "apply_effects",
+                        "effects": [
+                            {
+                                "id": "regeneration",
+                                "amplifier": 0,
+                                "duration": 60,
+                                "show_particles": false
+                            }
+                        ],
+                        "probability": 1
+                    }
+                ]
+            },
+            "custom_data": {
+                "craft": true
+            }
+        }
+    }
+}
