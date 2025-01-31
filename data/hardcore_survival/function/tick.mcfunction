@@ -208,8 +208,8 @@ execute as @a unless data entity @s {SelectedItem:{components:{"minecraft:custom
 execute as @e[type=item] run data modify entity @s Owner set from entity @s Thrower
 
 ### 骷髅骑蜘蛛 ###
-execute as @e[type=!skeleton_horse,type=#skeletons,tag=!hs.randomized] store result score @s hs.randomGenerator run random value 1..4
-execute as @e[type=!skeleton_horse,type=#skeletons,tag=!hs.randomized] if score @s hs.randomGenerator matches 4 run tag @s add hs.rideSpider
-execute as @e[type=!skeleton_horse,type=#skeletons,tag=!hs.randomized] run tag @s add hs.randomized
-execute as @e[type=!skeleton_horse,type=#skeletons,tag=hs.rideSpider] at @s run ride @s mount @e[distance=..2,type=spider,tag=!hs.rideSpider,limit=1,sort=nearest]
-execute as @e[type=!skeleton_horse,type=#skeletons,tag=hs.rideSpider] at @s run tag @e[type=spider,distance=..2,tag=!hs.rideSpider,sort=nearest] add hs.rideSpider
+execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] store result score @s hs.randomGenerator run random value 1..4
+execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] if score @s hs.randomGenerator matches 4 run tag @s add hs.rideSpider
+execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] run tag @s add hs.randomized
+execute as @e[type=#minecraft:skeletons,tag=hs.rideSpider] at @s run ride @s mount @e[distance=..2,type=spider,tag=!hs.rideSpider,limit=1,sort=nearest]
+execute as @e[type=#minecraft:skeletons,tag=hs.rideSpider] at @s run tag @e[type=spider,distance=..2,tag=!hs.rideSpider,sort=nearest] add hs.rideSpider
