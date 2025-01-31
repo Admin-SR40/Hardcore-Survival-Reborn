@@ -19,7 +19,8 @@
         "components": {
             "max_damage": 180,
             "custom_data": {
-                "craft":  true
+                "craft":  true,
+                "axe": true
             }
         }
     }

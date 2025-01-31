@@ -1,7 +1,7 @@
 scoreboard players set @s hs.temp 0
 
 execute as @s store result score @s hs.temp run clear @s diamond_axe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s diamond_axe[max_damage=1080,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s diamond_axe[max_damage=1080,custom_data={"craft":true,"axe":true}]
 execute as @s store result score @s hs.temp run clear @s diamond_pickaxe[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s diamond_pickaxe[max_damage=1080,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s diamond_sword[!custom_data] 1
@@ -12,7 +12,7 @@ execute as @s store result score @s hs.temp run clear @s diamond_hoe[!custom_dat
 execute as @s if score @s hs.temp matches 1.. run give @s diamond_hoe[max_damage=1080,custom_data={"craft":true}]
 
 execute as @s store result score @s hs.temp run clear @s netherite_axe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s netherite_axe[max_damage=1600,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s netherite_axe[max_damage=1600,custom_data={"craft":true,"axe":true}]
 execute as @s store result score @s hs.temp run clear @s netherite_pickaxe[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s netherite_pickaxe[max_damage=1600,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s netherite_sword[!custom_data] 1
@@ -23,7 +23,7 @@ execute as @s store result score @s hs.temp run clear @s netherite_hoe[!custom_d
 execute as @s if score @s hs.temp matches 1.. run give @s netherite_hoe[max_damage=1600,custom_data={"craft":true}]
 
 execute as @s store result score @s hs.temp run clear @s iron_axe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s iron_axe[max_damage=180,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s iron_axe[max_damage=180,custom_data={"craft":true,"axe":true}]
 execute as @s store result score @s hs.temp run clear @s iron_pickaxe[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s iron_pickaxe[max_damage=180,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s iron_sword[!custom_data] 1
@@ -34,7 +34,7 @@ execute as @s store result score @s hs.temp run clear @s iron_hoe[!custom_data] 
 execute as @s if score @s hs.temp matches 1.. run give @s iron_hoe[max_damage=180,custom_data={"craft":true}]
 
 execute as @s store result score @s hs.temp run clear @s stone_axe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_axe[max_damage=90,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_axe[max_damage=90,custom_data={"craft":true,"axe":true}]
 execute as @s store result score @s hs.temp run clear @s stone_pickaxe[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s stone_pickaxe[max_damage=90,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s stone_sword[!custom_data] 1
@@ -97,6 +97,9 @@ execute as @s store result score @s hs.temp run clear @s netherite_leggings[!cus
 execute as @s if score @s hs.temp matches 1.. run give @s netherite_leggings[max_damage=370,attribute_modifiers={modifiers:[{amount:6,id:"netherite_leggings_armor",operation:"add_value",type:"armor",slot:"legs"},{amount:2,id:"netherite_leggings_armor_toughness",operation:"add_value",type:"armor_toughness",slot:"legs"},{amount:0.05,id:"netherite_leggings_knockback_resistance",operation:"add_value",type:knockback_resistance,slot:legs}]},custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s netherite_boots[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s netherite_boots[max_damage=320,attribute_modifiers={modifiers:[{amount:4,id:"netherite_boots_armor",operation:"add_value",type:"armor",slot:"feet"},{amount:2,id:"netherite_boots_armor_toughness",operation:"add_value",type:"armor_toughness",slot:"feet"},{amount:0.05,id:"netherite_boots_knockback_resistance",operation:"add_value",type:knockback_resistance,slot:feet}]},custom_data={"craft":true}]
+
+execute as @s store result score @s hs.temp run clear @s golden_axe[!custom_data] 1
+execute as @s if score @s hs.temp matches 1.. run give @s golden_axe[custom_data={"craft":true,"axe":true}]
 
 execute as @s store result score @s hs.temp run clear @s elytra[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s elytra[!enchantable,!enchantments,max_damage=320,custom_data={"craft":true}]

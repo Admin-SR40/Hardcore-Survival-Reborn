@@ -12,6 +12,7 @@ gamerule naturalRegeneration false
 gamerule doImmediateRespawn true
 gamerule commandModificationBlockLimit 2147483647
 gamerule announceAdvancements false
+gamerule randomTickSpeed 2
 
 # 初始化计分板
 scoreboard objectives add hs.health health
@@ -51,12 +52,8 @@ scoreboard objectives add hs.drinkTimer dummy
 scoreboard objectives add hs.xpLevels dummy
 scoreboard objectives add hs.xpAmount dummy
 scoreboard objectives add hs.xpTimer dummy
+scoreboard objectives add hs.randomGenerator dummy
 
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health
 scoreboard objectives modify hs.health displayname "§c❤"
-
-# 加载完成提示
-summon armor_stand ~ ~ ~ {CustomName:'{"text":"HSR","color":"aqua"}',Tags:[hs.load]}
-execute as @e[type=armor_stand,tag=hs.load] run say §aDatapack is now loaded!
-kill @e[tag=hs.load]

@@ -1,32 +1,28 @@
 {
     "type": "minecraft:crafting_shaped",
-    "key": {
-        "a": [
-            "minecraft:flint"
-        ],
-        "b": [
-            "minecraft:stick"
-        ],
-        "c": [
-            "cobbled_deepslate",
-            "cobblestone",
-            "blackstone"
-        ]
-    },
+    "category": "equipment",
     "pattern": [
-        "ac",
+        "aa",
         "ab",
         " b"
     ],
+    "key": {
+        "a": [
+            "minecraft:gold_ingot"
+        ],
+        "b": [
+            "minecraft:stick"
+        ]
+    },
     "result": {
-        "id": "minecraft:stone_axe",
+        "id": "minecraft:diamond_axe",
         "count": 1,
         "components": {
-            "max_damage": 90,
             "custom_data": {
                 "craft":  true,
                 "axe": true
             }
         }
-    }
+    },
+    "show_notification": false
 }
