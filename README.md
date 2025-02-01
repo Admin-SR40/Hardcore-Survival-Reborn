@@ -12,7 +12,7 @@ Everything is refactored, better performance and game experience is waiting for 
 
 ## Update info
 - Latest version: **1.0 Beta**
-- Date: **25/1/31 17:45** (UTC +08:00)
+- Date: **25/2/1 19:00** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
