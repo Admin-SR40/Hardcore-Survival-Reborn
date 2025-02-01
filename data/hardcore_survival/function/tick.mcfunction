@@ -15,7 +15,7 @@
 # All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 0.9 Alpha
+# Current Version: 1.0 Beta
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
@@ -204,8 +204,8 @@ execute as @a at @s if dimension minecraft:overworld if predicate hardcore_survi
 execute as @a if data entity @s {SelectedItem:{components:{"minecraft:custom_data":{axe:1b}}}} run attribute @s attack_damage modifier add axe.attack_damage -0.25 add_multiplied_total
 execute as @a unless data entity @s {SelectedItem:{components:{"minecraft:custom_data":{axe:1b}}}} run attribute @s attack_damage modifier remove axe.attack_damage
 
-### 丢弃物品锁定 ###
-execute as @e[type=item] run data modify entity @s Owner set from entity @s Thrower
+### 丢弃物品锁定 (暂时禁用) ###
+# execute as @e[type=item] run data modify entity @s Owner set from entity @s Thrower
 
 ### 骷髅骑蜘蛛 ###
 execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] store result score @s hs.randomGenerator run random value 1..4
@@ -213,3 +213,16 @@ execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] if score @s hs.rando
 execute as @e[type=#minecraft:skeletons,tag=!hs.randomized] run tag @s add hs.randomized
 execute as @e[type=#minecraft:skeletons,tag=hs.rideSpider] at @s run ride @s mount @e[distance=..2,type=spider,tag=!hs.rideSpider,limit=1,sort=nearest]
 execute as @e[type=#minecraft:skeletons,tag=hs.rideSpider] at @s run tag @e[type=spider,distance=..2,tag=!hs.rideSpider,sort=nearest] add hs.rideSpider
+execute as @e[type=#minecraft:skeletons] run scoreboard players reset @s hs.randomGenerator
+
+### 僵尸受击提速 ###
+execute as @e[type=#minecraft:zombies] if data entity @s {IsBaby:0b,HurtTime:10s} run attribute @s movement_speed modifier add zombie.movement_speed 0.25 add_multiplied_total
+
+### 珍珠减速 ###
+execute as @a if score @s hs.usedEnderPearl matches 1.. run tag @s add hs.usedEnderPearl
+execute as @a[tag=hs.usedEnderPearl] run attribute @s movement_speed modifier add ender_pearl.movement_speed -0.75 add_multiplied_total
+execute as @a[tag=hs.usedEnderPearl] run scoreboard players add @s hs.pearlTimer 1
+execute as @a if score @s hs.usedEnderPearl matches 1.. run scoreboard players set @s hs.usedEnderPearl 0
+execute as @a if score @s hs.pearlTimer matches 20.. run tag @s remove hs.usedEnderPearl
+execute as @a if score @s hs.pearlTimer matches 20.. run attribute @s movement_speed modifier remove ender_pearl.movement_speed
+execute as @a if score @s hs.pearlTimer matches 20.. run scoreboard players set @s hs.pearlTimer 0

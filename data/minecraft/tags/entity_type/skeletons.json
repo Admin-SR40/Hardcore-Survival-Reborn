@@ -1,8 +1,8 @@
 {
     "values": [
-      "minecraft:skeleton",
-      "minecraft:stray",
-      "minecraft:wither_skeleton",
-      "minecraft:bogged"
+        "minecraft:skeleton",
+        "minecraft:stray",
+        "minecraft:wither_skeleton",
+        "minecraft:bogged"
     ]
-  }
+}

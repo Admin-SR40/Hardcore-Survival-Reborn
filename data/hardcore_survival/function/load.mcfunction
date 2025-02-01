@@ -53,6 +53,8 @@ scoreboard objectives add hs.xpLevels dummy
 scoreboard objectives add hs.xpAmount dummy
 scoreboard objectives add hs.xpTimer dummy
 scoreboard objectives add hs.randomGenerator dummy
+scoreboard objectives add hs.usedEnderPearl used:ender_pearl
+scoreboard objectives add hs.pearlTimer dummy
 
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health
