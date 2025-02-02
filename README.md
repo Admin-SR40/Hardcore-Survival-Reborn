@@ -7,6 +7,8 @@ This is the reborn version of the **Hardcore Survival**, the old version is stuc
 
 Everything is refactored, better performance and game experience is waiting for you, have a try?
 
+The **mod version** is out! You can download and use it just like other mods!
+
 ## Author
 - **Admin_SR40** (402757046@qq.com)
 
@@ -16,13 +18,22 @@ Everything is refactored, better performance and game experience is waiting for 
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
+- For mod version, **any** mod loader is okay!
 - No more requirements, that's easy!
 
 ## How to use
+### Datapack version:
 1. Open your world folder, the path should be `.minecraft/saves/world` or `.world/`.
 2. Open the datapacks folder.
 3. Drag this datapack into it.
-4. Join the game, and run `/datapack enable "file/Hardcore Survival Reborn"`.
+4. Join the game, and run `/datapack enable "file/Hardcore.Survival.Reborn.zip"`.
+5. All done! Good job!
+
+### Mod version:
+1. Make sure you have a mod loader installed, compatible with **any** mod loader!
+2. Open your mod folder, the path should be `.minecraft/mods` or in the version folder.
+3. Drag the mod into the folder.
+4. Restart your game.
 5. All done! Good job!
 
 ## Good to know
