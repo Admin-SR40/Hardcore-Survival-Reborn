@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "A": "redstone",
+        "B": "stick"
+    },
+    "pattern": [
+        "A",
+        "B"
+    ],
+    "result": {
+        "id": "redstone_torch",
+        "count": 2
+    }
+}

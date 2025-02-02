@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": -1,
+  "experience": 2.0,
+  "ingredient": "minecraft:ancient_debris",
+  "result": {
+    "id": "minecraft:netherite_scrap",
+    "components": {
+      "lore": ['{
+        "translate": "item.nether_scrap_from_smelting",
+        "fallback": "无法从熔炉中冶炼下界合金",
+        "color": "red",
+        "italic": false
+      }']
+    }
+  }
+}

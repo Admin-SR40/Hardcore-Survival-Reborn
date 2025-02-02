@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#minecraft:logs",
+    "X": "minecraft:furnace",
+    "*": "minecraft:smooth_stone",
+    "I": "minecraft:coal_block"
+  },
+  "pattern": [
+    "*#*",
+    "#X#",
+    "*I*"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:smoker"
+  }
+}
