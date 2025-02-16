@@ -226,3 +226,16 @@ execute as @a if score @s hs.usedEnderPearl matches 1.. run scoreboard players s
 execute as @a if score @s hs.pearlTimer matches 20.. run tag @s remove hs.usedEnderPearl
 execute as @a if score @s hs.pearlTimer matches 20.. run attribute @s movement_speed modifier remove ender_pearl.movement_speed
 execute as @a if score @s hs.pearlTimer matches 20.. run scoreboard players set @s hs.pearlTimer 0
+
+### 僵尸成群生成 ###
+execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombified_piglin,type=!drowned,type=!zoglin,tag=!hs.groupZombie] unless score @s hs.randomGenerator matches 1..4 store result score @s hs.randomGenerator run random value 1..4
+execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombified_piglin,type=!drowned,type=!zoglin,tag=!hs.groupZombie] if score @s hs.randomGenerator matches 4 run function hardcore_survival:zombie/spawn
+execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombified_piglin,type=!drowned,type=!zoglin,tag=!hs.groupZombie] run tag @s add hs.groupZombie
+
+### 蜜蜂 ###
+execute as @e[type=bee] at @s run attribute @s scale base set 0.25
+execute as @e[type=bee] at @s run data merge entity @s {HasStung:false}
+execute as @e[type=bee] at @s if entity @e[distance=..2,type=!bee] run data merge entity @s {AngerTime:200s}
+
+### 数据处理 ###
+scoreboard players reset @e hs.randomGenerator

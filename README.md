@@ -39,7 +39,7 @@ The **mod version** is out! You can download and use it just like other mods!
 ## Good to know
 - You can run other datapacks at the same time, but I'm **not** recommend to do so.
 - If you accidently broke something, just reload by using `/reload`, it should be fine.
-- The project is licensed under the **GPLv3**, see the LICENSE file for details
+- The project is licensed under the **GPLv3**, see the LICENSE file for details.
 
 ## Bug report
 If you find any bugs, please:
