@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "X": "gold_ingot",
+        "Y": "redstone"
+    },
+    "pattern": [
+        "XXX",
+        "XYX",
+        "XXX"
+    ],
+    "result": {
+        "id": "minecraft:clock",
+        "count": 1,
+        "components": {
+            "custom_data": {
+                "version": "normal"
+            },
+            "item_name": '{
+                "translate": "hs.clock_normal",
+                "fallback": "普通时钟",
+                "color": "white"
+            }'
+        }
+    }
+}

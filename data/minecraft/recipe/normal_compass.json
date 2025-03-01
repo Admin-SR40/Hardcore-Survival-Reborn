@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "X": "iron_ingot",
+        "Y": "redstone"
+    },
+    "pattern": [
+        "XXX",
+        "XYX",
+        "XXX"
+    ],
+    "result": {
+        "id": "minecraft:compass",
+        "count": 1,
+        "components": {
+            "custom_data": {
+                "version": "normal"
+            },
+            "item_name": '{
+                "translate": "hs.compass_normal",
+                "fallback": "普通指南针",
+                "color": "white"
+            }'
+        }
+    }
+}

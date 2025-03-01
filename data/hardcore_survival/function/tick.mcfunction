@@ -55,6 +55,10 @@ execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players add @s
 execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players remove @s hs.water 1
 execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players set @s hs.waterTimer 0
 execute as @a if score @s hs.water matches 0 run scoreboard players set @s hs.waterTimer 0
+execute as @a if score @s hs.water matches 0 run scoreboard players add @s hs.waterHurtTimer 1
+execute as @a if score @s hs.waterHurtTimer matches 80.. run damage @s 1 bypass
+execute as @a if score @s hs.waterHurtTimer matches 80.. run scoreboard players set @s hs.waterHurtTimer 0
+execute as @a if score @s hs.water matches 1.. run scoreboard players set @s hs.waterHurtTimer 0
 
 ### 水中蹲下喝水 ###
 execute as @a at @s if score @s hs.sneakTick matches 1.. if block ~ ~ ~ water run scoreboard players add @s hs.drinkTimer 1
@@ -70,14 +74,8 @@ execute as @a if score @s hs.darkTimer matches ..-601 run scoreboard players set
 execute as @a if score @s hs.darkTimer matches 601.. run scoreboard players set @s hs.darkTimer 600
 execute as @a at @s if predicate hardcore_survival:is_dark unless dimension the_end unless data entity @s {active_effects:[{id:"minecraft:night_vision"}]} if score @s hs.darkTimer matches ..-1 run effect give @s darkness 3 0 true
 
-### 手持指南针显示坐标 ###
-execute as @a store result score @s hs.posX run data get entity @s Pos.[0]
-execute as @a store result score @s hs.posY run data get entity @s Pos.[1]
-execute as @a store result score @s hs.posZ run data get entity @s Pos.[2]
-execute as @a if data entity @s {SelectedItem:{id:"minecraft:compass"}} run title @s actionbar [{"text":"[ ","color":"aqua"},{"score":{"name":"@s","objective":"hs.posX"},"color":"gold","extra":[{"text":", ","color":"gray"}]},{"score":{"name":"@s","objective":"hs.posY"},"color":"gold","extra":[{"text":", ","color":"gray"}]},{"score":{"name":"@s","objective":"hs.posZ"},"color":"gold"},{"text":" ]","color":"aqua"}]
-
 ### 低头显示水分 ###
-execute as @a if score @s hs.pitch matches 61..90 run title @s actionbar [{"text":"[","color":"yellow"},{"translate":"message.water","fallback":"水分 ","color":"aqua"},{"text":": ","color":"gray"},{"score":{"name":"@s","objective":"hs.water"},"color":"aqua","extra":[{"text":"%","color":"aqua"}]},{"text":"]","color":"yellow"}]
+execute as @a if score @s hs.pitch matches 61..90 run title @s actionbar [{"text":"[ ","color":"yellow"},{"translate":"message.water","fallback":"水分 ","color":"aqua"},{"text":": ","color":"gray"},{"score":{"name":"@s","objective":"hs.water"},"color":"aqua","extra":[{"text":"%","color":"aqua"}]},{"text":" ]","color":"yellow"}]
 
 ### 喝水获得水分 ###
 execute as @a if score @s hs.usedMilkBucket matches 1.. run function hardcore_survival:drink/drink
@@ -141,7 +139,7 @@ execute as @e if score @s hs.stunTimer matches 0 run attribute @s attack_damage 
 
 ### 盾牌效果 ###
 execute as @a run function hardcore_survival:shield/hold
-execute as @a if score @s hs.usedShield matches 1.. run function hardcore_survival:shield/block
+execute as @a at @s if score @s hs.usedShield matches 1.. run function hardcore_survival:shield/block
 
 ### 怪物箭矢加强 ###
 execute as @e[type=!player] at @s run data merge entity @e[type=arrow,distance=..0.05,limit=1,sort=nearest,tag=!hs.player] {damage:3.5d}
@@ -236,6 +234,17 @@ execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombi
 execute as @e[type=bee] at @s run attribute @s scale base set 0.25
 execute as @e[type=bee] at @s run data merge entity @s {HasStung:false}
 execute as @e[type=bee] at @s if entity @e[distance=..2,type=!bee] run data merge entity @s {AngerTime:200s}
+
+### 时间显示 ###
+execute as @a if data entity @s {SelectedItem:{id:"minecraft:clock"}} run function hardcore_survival:time/display
+
+### 手持指南针显示坐标 ###
+execute as @a if data entity @s {SelectedItem:{id:"minecraft:compass"}} run function hardcore_survival:position/display
+
+### 破盾 ###
+execute as @a at @s if score @s hs.shieldBlockTimes matches 4.. run function hardcore_survival:shield/break
+scoreboard players add @a hs.shieldBlockTimer 1
+execute as @a if score @s hs.shieldBlockTimer matches 120.. run scoreboard players set @s hs.shieldBlockTimes 0
 
 ### 数据处理 ###
 scoreboard players reset @e hs.randomGenerator

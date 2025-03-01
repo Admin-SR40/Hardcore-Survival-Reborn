@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "X": "iron_nugget",
+        "Y": "redstone"
+    },
+    "pattern": [
+        "XXX",
+        "XYX",
+        "XXX"
+    ],
+    "result": {
+        "id": "minecraft:compass",
+        "count": 1,
+        "components": {
+            "custom_data": {
+                "version": "lite"
+            },
+            "item_name": '{
+                "translate": "hs.compass_lite",
+                "fallback": "简易指南针",
+                "color": "white"
+            }'
+        }
+    }
+}

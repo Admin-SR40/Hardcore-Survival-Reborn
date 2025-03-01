@@ -8,6 +8,9 @@ scoreboard players set @s hs.darkTimer 0
 scoreboard players set @s hs.sprintTick 0
 scoreboard players set @s hs.drinkTimer 0
 scoreboard players set @s hs.exhaustion 0
+scoreboard players set @s hs.shieldBlockTimes 0
+scoreboard players set @s hs.shieldBlockTimer 0
+
 
 # 死亡提示
 execute as @s at @s run tellraw @a[distance=0.05..] [{"text":"☠ ","color":"red"},{"selector":"@s","color":"gray"},{"translate":"message.death","fallback":"死了","color":"gray"}]
