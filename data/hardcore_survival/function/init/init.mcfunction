@@ -11,6 +11,7 @@ scoreboard players set @s hs.exhaustion 0
 scoreboard players set @s hs.sneakTick 0
 scoreboard players set @s hs.sprintTick 0
 scoreboard players set @s hs.jumpTimes 0
+scoreboard players set @s hs.attackSpeed 0
 
 tag @s add hs.init
 

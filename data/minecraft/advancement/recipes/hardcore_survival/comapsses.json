@@ -1,0 +1,27 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_iron": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "iron_ingot"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_iron"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "minecraft:compass",
+            "minecraft:normal_compass",
+            "minecraft:advanced_compass"
+        ]
+    }
+}

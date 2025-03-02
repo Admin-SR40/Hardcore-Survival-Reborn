@@ -59,10 +59,15 @@ scoreboard objectives add hs.timeDisplay dummy
 scoreboard objectives add hs.shieldBlockTimes dummy
 scoreboard objectives add hs.shieldBlockTimer dummy
 scoreboard objectives add hs.waterHurtTimer dummy
+scoreboard objectives add hs.attackSpeed dummy
 
 scoreboard players set hs.temp_1000 hs.temp 1000
 scoreboard players set hs.temp_3 hs.temp 3
 scoreboard players set hs.temp_50 hs.temp 50
+scoreboard players set hs.temp_10 hs.temp 10
+scoreboard players set hs.temp_-1 hs.temp -1
+scoreboard players set hs.temp_2 hs.temp 2
+scoreboard players set hs.temp_20 hs.temp 20
 
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health

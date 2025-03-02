@@ -1,0 +1,22 @@
+{
+    "description": {
+        "translate": "hs.enchantment.fast_sword",
+        "fallback": "瞬击",
+        "color": "gray"
+    },
+    "max_level": 5,
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#enchantable/sword",
+    "anvil_cost": 2,
+    "min_cost": {
+        "base": 2,
+        "per_level_above_first": 2
+    },
+    "max_cost": {
+        "base": 20,
+        "per_level_above_first": 2
+    },
+    "weight": 10
+}

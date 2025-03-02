@@ -1,0 +1,25 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_enchanted_book": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "enchanted_book"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_enchanted_book"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "minecraft:fast_sword"
+        ]
+    }
+}

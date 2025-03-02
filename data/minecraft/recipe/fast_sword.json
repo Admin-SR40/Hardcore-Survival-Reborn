@@ -1,0 +1,28 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "XYX",
+        "YZY",
+        "XYX"
+    ],
+    "key": {
+        "X": "minecraft:blaze_powder",
+        "Y": "minecraft:sugar",
+        "Z": "minecraft:enchanted_book"
+    },
+    "result": {
+        "id": "enchanted_book",
+        "components": {
+            "stored_enchantments": {
+                "fast_sword": 1
+            },
+            "lore": [
+                '{
+                    "text": "每 1 级减少 10% 受伤间隔",
+                    "italic": false,
+                    "color": "dark_gray"
+                }'
+            ]
+        }
+    }
+}

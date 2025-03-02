@@ -1,0 +1,25 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_flint": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "flint"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_flint"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "minecraft:cobblestone"
+        ]
+    }
+}

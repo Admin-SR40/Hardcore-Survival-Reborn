@@ -1,0 +1,26 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_gold": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "gold_ingot"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_gold"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "minecraft:clock",
+            "minecraft:normal_clock"
+        ]
+    }
+}

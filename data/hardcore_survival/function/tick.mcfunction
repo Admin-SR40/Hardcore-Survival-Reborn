@@ -246,5 +246,17 @@ execute as @a at @s if score @s hs.shieldBlockTimes matches 4.. run function har
 scoreboard players add @a hs.shieldBlockTimer 1
 execute as @a if score @s hs.shieldBlockTimer matches 120.. run scoreboard players set @s hs.shieldBlockTimes 0
 
+### 获取攻击速度 ###
+scoreboard players set @a hs.attackSpeed 0
+execute as @a store result score @s hs.attackSpeed run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:fast_sword"
+execute as @a run scoreboard players operation @s hs.attackSpeed *= hs.temp_20 hs.temp
+
+### 自定义攻击速度 ###
+execute as @e[type=!player] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
+execute as @e[type=!player] if score @s hs.attackSpeed matches 1.. run data merge entity @s {Invulnerable:1b}
+execute as @e[type=!player] if score @s hs.attackSpeed matches 1.. run scoreboard players remove @s hs.attackSpeed 1
+execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run data merge entity @s {Invulnerable:0b}
+execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run scoreboard players reset @s hs.attackSpeed
+
 ### 数据处理 ###
 scoreboard players reset @e hs.randomGenerator
