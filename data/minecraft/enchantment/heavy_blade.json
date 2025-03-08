@@ -1,8 +1,8 @@
 {
   "anvil_cost": 1,
   "description": {
-    "translate": "hs.enchantment.fast_sword",
-    "fallback": "瞬击",
+    "translate": "hs.enchantment.heavy_blade",
+    "fallback": "重刃",
     "color": "gray"
   },
   "effects": {
@@ -12,14 +12,14 @@
           "type": "minecraft:add",
           "value": {
             "type": "minecraft:linear",
-            "base": -0.2,
-            "per_level_above_first": -0.2
+            "base": 0.2,
+            "per_level_above_first": 0.2
           }
         }
       }
     ]
   },
-  "exclusive_set": "minecraft:heavy_blade",
+  "exclusive_set": "minecraft:fast_sword",
   "max_cost": {
     "base": 20,
     "per_level_above_first": 2

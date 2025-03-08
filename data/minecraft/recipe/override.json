@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:all_equipments",
+    "#minecraft:all_equipments"
+  ],
+  "result": {
+    "id": "minecraft:barrier",
+    "components": {
+      "item_name": '{
+        "translate": "hs.bannedRecipe",
+        "fallback": "该合成表已被 HSR 禁用",
+        "color": "red"
+      }',
+      "lore": [
+        '{
+          "text": ""
+        }',
+        '{
+          "translate": "hs.bannedCraftingRepair",
+          "fallback": "你无法再通过合成来增加物品耐久!",
+          "color": "gray",
+          "italic": false
+        }',
+        '{
+          "translate": "hs.craftWarning",
+          "fallback": "请勿尝试合成! 合成不会返还物品!",
+          "color": "gray",
+          "italic": false
+        }'
+      ],
+      "custom_data": {
+        "hs.bannedRecipe": true
+      }
+    }
+  }
+}

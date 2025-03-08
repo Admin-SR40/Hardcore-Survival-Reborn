@@ -248,8 +248,14 @@ execute as @a if score @s hs.shieldBlockTimer matches 120.. run scoreboard playe
 
 ### 获取攻击速度 ###
 scoreboard players set @a hs.attackSpeed 0
-execute as @a store result score @s hs.attackSpeed run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:fast_sword"
-execute as @a run scoreboard players operation @s hs.attackSpeed *= hs.temp_20 hs.temp
+execute as @a store result score @s hs.temp run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:fast_sword"
+execute as @a run scoreboard players operation @s hs.temp *= hs.temp_20 hs.temp
+execute as @a run scoreboard players operation @s hs.attackSpeed += @s hs.temp
+execute as @a store result score @s hs.temp run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:heavy_blade"
+execute as @a run scoreboard players operation @s hs.temp *= hs.temp_20 hs.temp
+execute as @a run scoreboard players operation @s hs.attackSpeed -= @s hs.temp
+execute as @a if score @s hs-debug.forceAttackSpeed matches -2147483648..2147483647 run scoreboard players operation @s hs.attackSpeed = @s hs-debug.forceAttackSpeed
+scoreboard players reset @s hs.temp
 
 ### 自定义攻击速度 ###
 execute as @e[type=!player] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
@@ -258,5 +264,11 @@ execute as @e[type=!player] if score @s hs.attackSpeed matches 1.. run scoreboar
 execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run data merge entity @s {Invulnerable:0b}
 execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run scoreboard players reset @s hs.attackSpeed
 
+### 清除非法物品 ###
+clear @a barrier[custom_data={"hs.bannedRecipe":true}]
+kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{hs.bannedRecipe:1b}}}}]
+
+
 ### 数据处理 ###
 scoreboard players reset @e hs.randomGenerator
+scoreboard players reset @e hs.dealDamage

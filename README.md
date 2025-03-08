@@ -1,4 +1,4 @@
-# **Hardcore Survival Reborn**
+# Hardcore Survival Reborn
 
 A Minecraft datapack that makes game much much harder!
 
@@ -13,8 +13,8 @@ The **mod version** is out! You can download and use it just like other mods!
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **1.4 Beta**
-- Date: **25/3/2 14:20** (UTC +08:00)
+- Latest version: **1.5 Beta**
+- Date: **25/3/8 21:30** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
