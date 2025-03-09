@@ -19,7 +19,8 @@
     ],
     "rewards": {
         "recipes": [
-            "minecraft:fast_sword"
+            "minecraft:fast_sword",
+            "minecraft:heavy_blade"
         ]
     }
 }

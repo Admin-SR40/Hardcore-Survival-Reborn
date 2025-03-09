@@ -13,6 +13,7 @@ gamerule doImmediateRespawn true
 gamerule commandModificationBlockLimit 2147483647
 gamerule announceAdvancements false
 gamerule randomTickSpeed 2
+gamerule pvp false
 
 # 初始化计分板
 scoreboard objectives add hs.health health

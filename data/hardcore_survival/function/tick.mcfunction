@@ -264,10 +264,16 @@ execute as @e[type=!player] if score @s hs.attackSpeed matches 1.. run scoreboar
 execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run data merge entity @s {Invulnerable:0b}
 execute as @e[type=!player] if score @s hs.attackSpeed matches 0 run scoreboard players reset @s hs.attackSpeed
 
+### 玩家触及距离 ###
+execute as @a run attribute @s entity_interaction_range modifier add hs.reach_entity -1.5 add_value
+execute as @a run attribute @s block_interaction_range modifier add hs.reach_block -1.5 add_value
+execute as @a if data entity @s {SelectedItem:{}} run function hardcore_survival:reach/modify
+execute as @a unless data entity @s {SelectedItem:{}} run attribute @s entity_interaction_range modifier remove item.reach_entity
+execute as @a unless data entity @s {SelectedItem:{}} run attribute @s block_interaction_range modifier remove item.reach_block
+
 ### 清除非法物品 ###
 clear @a barrier[custom_data={"hs.bannedRecipe":true}]
 kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{hs.bannedRecipe:1b}}}}]
-
 
 ### 数据处理 ###
 scoreboard players reset @e hs.randomGenerator
