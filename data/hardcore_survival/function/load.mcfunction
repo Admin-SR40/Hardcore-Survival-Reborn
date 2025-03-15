@@ -13,7 +13,6 @@ gamerule doImmediateRespawn true
 gamerule commandModificationBlockLimit 2147483647
 gamerule announceAdvancements false
 gamerule randomTickSpeed 2
-gamerule pvp false
 
 # 初始化计分板
 scoreboard objectives add hs.health health
@@ -61,6 +60,11 @@ scoreboard objectives add hs.shieldBlockTimes dummy
 scoreboard objectives add hs.shieldBlockTimer dummy
 scoreboard objectives add hs.waterHurtTimer dummy
 scoreboard objectives add hs.attackSpeed dummy
+scoreboard objectives add hs.originalHealth dummy
+scoreboard objectives add hs.currentHealth dummy
+scoreboard objectives add hs.disappearTimer dummy
+scoreboard objectives add hs.displayer_1 dummy
+scoreboard objectives add hs.displayer_2 dummy
 
 scoreboard players set hs.temp_1000 hs.temp 1000
 scoreboard players set hs.temp_3 hs.temp 3
@@ -69,7 +73,15 @@ scoreboard players set hs.temp_10 hs.temp 10
 scoreboard players set hs.temp_-1 hs.temp -1
 scoreboard players set hs.temp_2 hs.temp 2
 scoreboard players set hs.temp_20 hs.temp 20
+scoreboard players set hs.temp_100 hs.temp 100
+scoreboard players set hs.temp_4 hs.temp 4
 
 # 初始化计分板显示
 scoreboard objectives setdisplay below_name hs.health
 scoreboard objectives modify hs.health displayname "§c❤"
+
+# 初始化队伍
+team add hs
+team modify hs friendlyFire false
+team modify hs seeFriendlyInvisibles false
+team modify hs collisionRule pushOtherTeams

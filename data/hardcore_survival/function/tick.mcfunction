@@ -15,7 +15,7 @@
 # All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 1.1 Beta
+# Current Version: 1.6 Beta
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
@@ -27,7 +27,7 @@
 #  - (Your name here!)
 
 ### 受击后受到伤害增加 ###
-execute as @a if score @s hs.takeDamage matches 30.. if data entity @s {HurtTime:10s} run function hardcore_survival:wound/take
+execute as @a if score @s hs.takeDamage matches 30.. if data entity @s {HurtTime:9s} run function hardcore_survival:wound/take
 execute as @a if score @s hs.woundLevel matches 1.. run scoreboard players add @s hs.woundTimer 1
 execute as @a if score @s hs.woundLevel matches 1.. if score @s hs.woundTimer matches 600.. run scoreboard players remove @s hs.woundLevel 1
 execute as @a unless score @s hs.woundLevel matches 1.. run scoreboard players set @s hs.woundTimer 0
@@ -270,6 +270,17 @@ execute as @a run attribute @s block_interaction_range modifier add hs.reach_blo
 execute as @a if data entity @s {SelectedItem:{}} run function hardcore_survival:reach/modify
 execute as @a unless data entity @s {SelectedItem:{}} run attribute @s entity_interaction_range modifier remove item.reach_entity
 execute as @a unless data entity @s {SelectedItem:{}} run attribute @s block_interaction_range modifier remove item.reach_block
+
+### 显示生命变化 ###
+execute as @e[tag=!hs.getHealth,type=!#ignore] store result score @s hs.currentHealth run data get entity @s Health 100
+execute as @e[type=!#ignore] if score @s hs.originalHealth matches -2147483648..2147483647 run tag @s add hs.getHealth
+execute as @e[type=!#ignore] unless score @s hs.originalHealth matches -2147483648..2147483647 run scoreboard players operation @s hs.originalHealth = @s hs.currentHealth
+execute as @e[type=!#ignore] at @s if entity @a[distance=..16] if score @s hs.originalHealth < @s hs.currentHealth run function hardcore_survival:damage/heal
+execute as @e[type=!#ignore,type=!player] at @s if entity @a[distance=..16] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/damage
+execute as @a at @s if entity @a[distance=..16] if data entity @s {HurtTime:9s} run function hardcore_survival:damage/damage
+scoreboard players add @e[tag=hs.displayer] hs.disappearTimer 1
+kill @e[tag=hs.displayer,scores={hs.disappearTimer=20..}]
+
 
 ### 清除非法物品 ###
 clear @a barrier[custom_data={"hs.bannedRecipe":true}]
