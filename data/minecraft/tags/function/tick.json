@@ -1,5 +1,7 @@
 {
     "values": [
-        "hardcore_survival:tick"
+        "hardcore_survival:tick",
+        "hardcore_survival:tick_2",
+        "hardcore_survival:tick_3"
     ]
 }

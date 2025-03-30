@@ -65,6 +65,7 @@ scoreboard objectives add hs.currentHealth dummy
 scoreboard objectives add hs.disappearTimer dummy
 scoreboard objectives add hs.displayer_1 dummy
 scoreboard objectives add hs.displayer_2 dummy
+scoreboard objectives add hs.heartbeatTimer dummy
 
 scoreboard players set hs.temp_1000 hs.temp 1000
 scoreboard players set hs.temp_3 hs.temp 3
