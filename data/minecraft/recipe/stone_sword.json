@@ -2,30 +2,29 @@
     "type": "minecraft:crafting_shaped",
     "key": {
         "a": [
-            "minecraft:flint"
+            "minecraft:copper_ingot"
         ],
         "b": [
             "minecraft:stick"
-        ],
-        "c": [
-            "cobbled_deepslate",
-            "cobblestone",
-            "blackstone"
         ]
     },
     "pattern": [
         "a",
-        "c",
+        "a",
         "b"
     ],
     "result": {
         "id": "minecraft:stone_sword",
         "count": 1,
         "components": {
-            "max_damage": 90,
+            "max_damage": 135,
             "custom_data": {
                 "craft":  true
-            }
+            },
+            "item_name": '{
+                "translate": "hs.item.copper_sword",
+                "fallback": "铜剑"
+            }'
         }
     }
 }

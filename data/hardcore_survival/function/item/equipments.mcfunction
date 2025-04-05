@@ -34,15 +34,15 @@ execute as @s store result score @s hs.temp run clear @s iron_hoe[!custom_data] 
 execute as @s if score @s hs.temp matches 1.. run give @s iron_hoe[max_damage=180,custom_data={"craft":true}]
 
 execute as @s store result score @s hs.temp run clear @s stone_axe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_axe[max_damage=90,custom_data={"craft":true,"axe":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_axe[max_damage=135,custom_data={"craft":true,"axe":true}]
 execute as @s store result score @s hs.temp run clear @s stone_pickaxe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_pickaxe[max_damage=90,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_pickaxe[max_damage=135,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s stone_sword[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_sword[max_damage=90,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_sword[max_damage=135,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s stone_shovel[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_shovel[max_damage=90,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_shovel[max_damage=135,custom_data={"craft":true}]
 execute as @s store result score @s hs.temp run clear @s stone_hoe[!custom_data] 1
-execute as @s if score @s hs.temp matches 1.. run give @s stone_hoe[max_damage=90,custom_data={"craft":true}]
+execute as @s if score @s hs.temp matches 1.. run give @s stone_hoe[max_damage=135,custom_data={"craft":true}]
 
 execute as @s store result score @s hs.temp run clear @s diamond_helmet[!custom_data] 1
 execute as @s if score @s hs.temp matches 1.. run give @s diamond_helmet[max_damage=242,attribute_modifiers={modifiers:[{amount:3,id:"diamond_helmet_armor",operation:"add_value",type:"armor",slot:"head"},{amount:1,id:"diamond_helmet_armor_toughness",operation:"add_value",type:"armor_toughness",slot:"head"}]},custom_data={"craft":true}]

@@ -1,27 +1,34 @@
 {
     "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "a"
-    ],
     "key": {
         "a": [
-            "minecraft:barrier"
+            "minecraft:flint"
+        ],
+        "b": [
+            "minecraft:stick"
+        ],
+        "c": [
+            "cobbled_deepslate",
+            "cobblestone",
+            "blackstone"
         ]
     },
+    "pattern": [
+        "ac",
+        " b",
+        " b"
+    ],
     "result": {
         "id": "minecraft:wooden_hoe",
+        "count": 1,
         "components": {
-            "!max_damage": {},
-            "lore": [
-                '{
-                    "translate":"message.banned_item",
-                    "fallback": "该物品已被数据包禁用",
-                    "color": "red",
-                    "italic": false
-                }'
-            ],
-            "!attribute_modifiers": {},
-            "!tool": {}
+            "max_damage": 90,
+            "custom_data": {
+                "craft":  true
+            },
+            "item_name": '{
+                "translate": "item.minecraft.stone_hoe"
+            }'
         }
     }
 }
