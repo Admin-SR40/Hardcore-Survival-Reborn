@@ -10,6 +10,7 @@ execute as @e[type=!player] run attribute @s attack_damage modifier add mob.atta
 execute as @e[type=!player] run attribute @s[type=!creeper] max_health modifier add mob.max_health 0.5 add_multiplied_total
 execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=#undead] run effect give @s instant_damage 3 9 true
 execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=!#undead,type=!creeper] run effect give @s instant_health 3 9 true
+execute as @e[type=!player,tag=!hs.mob] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
 execute as @e[type=!player] if entity @s[tag=!hs.mob] run tag @s add hs.mob
 execute as @e[type=creeper] unless data entity @s {powered:true} run data merge entity @s {Fuse:20s}
 execute as @e[type=creeper] if data entity @s {powered:true} run data merge entity @s {Fuse:15s}
@@ -51,9 +52,6 @@ execute as @e[type=end_crystal] at @s run execute as @e[type=#minecraft:projecti
 execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {crit:false}
 execute as @e[type=#minecraft:arrows,tag=hs.player] run data merge entity @s {shake:true}
 execute as @e[type=#minecraft:arrows] run data merge entity @s {pickup:0b}
-
-### 怪物不掉落装备 ###
-execute as @e[type=!player] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
 
 ### 非法物品替换 ###
 execute as @a store result score @s hs.temp run clear @s #equipments[!custom_data] 0
