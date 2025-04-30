@@ -6,12 +6,12 @@ execute as @a run scoreboard players operation @s hs.temp /= @s hs.maxHealth
 execute as @a run function hardcore_survival:debuff/apply
 
 ### 生物加强 ###
-execute as @e[type=!player] run attribute @s attack_damage modifier add mob.attack_damage 0.5 add_multiplied_total
-execute as @e[type=!player] run attribute @s[type=!creeper] max_health modifier add mob.max_health 0.5 add_multiplied_total
-execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=#undead] run effect give @s instant_damage 3 9 true
-execute as @e[type=!player] if entity @s[tag=!hs.mob] if entity @s[type=!#undead,type=!creeper] run effect give @s instant_health 3 9 true
-execute as @e[type=!player,tag=!hs.mob] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
-execute as @e[type=!player] if entity @s[tag=!hs.mob] run tag @s add hs.mob
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] run attribute @s attack_damage modifier add mob.attack_damage 0.5 add_multiplied_total
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] run attribute @s[type=!creeper] max_health modifier add mob.max_health 0.5 add_multiplied_total
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] if entity @s[tag=!hs.mob] if entity @s[type=#undead] run effect give @s instant_damage 3 9 true
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] if entity @s[tag=!hs.mob] if entity @s[type=!#undead,type=!creeper] run effect give @s instant_health 3 9 true
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] run data merge entity @s {ArmorDropChances:[0.0f, 0.0f, 0.0f, 0.0f],HandDropChances:[0.0f, 0.0f]}
+execute as @e[type=!player,tag=!hs.mob,type=!#ignore] if entity @s[tag=!hs.mob] run tag @s add hs.mob
 execute as @e[type=creeper] unless data entity @s {powered:true} run data merge entity @s {Fuse:20s}
 execute as @e[type=creeper] if data entity @s {powered:true} run data merge entity @s {Fuse:15s}
 
@@ -34,7 +34,7 @@ execute as @a run function hardcore_survival:shield/hold
 execute as @a at @s if score @s hs.usedShield matches 1.. run function hardcore_survival:shield/block
 
 ### 怪物箭矢加强 ###
-execute as @e[type=!player] at @s run data merge entity @e[type=arrow,distance=..0.05,limit=1,sort=nearest,tag=!hs.player] {damage:3.5d}
+execute as @e[type=!player,type=!#ignore] at @s if entity @e[type=arrow,distance=..0.05] run data merge entity @e[type=arrow,distance=..0.05,limit=1,sort=nearest,tag=!hs.player] {damage:3.5d}
 
 ### 重锤减速 ###
 execute as @a run function hardcore_survival:mace/hold

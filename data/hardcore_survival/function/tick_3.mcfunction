@@ -51,7 +51,7 @@ execute as @a if score @s hs-debug.forceAttackSpeed matches -2147483648..2147483
 scoreboard players reset @s hs.temp
 
 ### 自定义攻击速度 ###
-execute as @e[type=!player,type=!#ignore] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
+execute as @e[type=!player,type=!#ignore] at @s if entity @a[distance=..10] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 1.. run data merge entity @s {Invulnerable:1b}
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 1.. run scoreboard players remove @s hs.attackSpeed 1
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 0 run data merge entity @s {Invulnerable:0b}

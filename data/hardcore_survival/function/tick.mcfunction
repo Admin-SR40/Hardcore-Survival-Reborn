@@ -43,7 +43,7 @@ scoreboard players set @a hs.percentage 100
 execute as @a store result score @s hs.maxHealth run attribute @s max_health get
 execute as @a store result score @s hs.yaw run data get entity @s Rotation[0]
 execute as @a store result score @s hs.pitch run data get entity @s Rotation[1]
-execute as @e store result score @s hs.fireTick run data get entity @s Fire
+execute as @e[type=!#ignore] if entity @e[distance=0.05..2] store result score @s hs.fireTick run data get entity @s Fire
 
 ### 新玩家初始化 ###
 execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
