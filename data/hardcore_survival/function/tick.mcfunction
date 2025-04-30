@@ -15,7 +15,7 @@
 # All rights reserved, do not distribute.
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 1.8 Beta
+# Current Version: 2.0 Gamma
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
@@ -24,7 +24,10 @@
 
 # Contributors:
 #  - Admin_SR40
-#  - (Your name here!)
+#  - FishHave
+#  - BaiYu_
+#  - Hqn233
+#  - SuererRiels
 
 ### 受击后受到伤害增加 ###
 execute as @a if score @s hs.takeDamage matches 30.. if data entity @s {HurtTime:9s} run function hardcore_survival:wound/take
