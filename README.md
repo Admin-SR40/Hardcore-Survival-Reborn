@@ -13,8 +13,8 @@ The **mod version** is out! You can download and use it just like other mods!
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **2.0 Gamma**
-- Date: **25/4/30 19:35** (UTC +08:00)
+- Latest version: **2.1 Gamma**
+- Date: **25/5/18 3:15** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!
@@ -40,6 +40,11 @@ The **mod version** is out! You can download and use it just like other mods!
 - You can run other datapacks at the same time, but I'm **not** recommend to do so.
 - If you accidently broke something, just reload by using `/reload`, it should be fine.
 - The project is licensed under the **GPLv3**, see the LICENSE file for details.
+
+## Modification
+- It's not easy to modify, but AI can help alot!
+- AI generated [Wiki Page](https://deepwiki.com/Admin-SR40/Hardcore-Survival-Reborn)
+- Always try to update the wiki before use it!
 
 ## Bug report
 If you find any bugs, please:

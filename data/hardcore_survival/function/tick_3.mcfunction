@@ -23,11 +23,8 @@ execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombi
 execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombified_piglin,type=!drowned,type=!zoglin,tag=!hs.groupZombie] if score @s hs.randomGenerator matches 4 run function hardcore_survival:zombie/spawn
 execute as @e[type=#zombies,type=!zombie_horse,type=!zombie_villager,type=!zombified_piglin,type=!drowned,type=!zoglin,tag=!hs.groupZombie] run tag @s add hs.groupZombie
 
-### 蜜蜂 ###
-execute as @e[type=bee] at @s run attribute @s scale base set 0.25
-execute as @e[type=bee] at @s run data merge entity @s {HasStung:false}
-execute as @e[type=bee] at @s if entity @e[distance=..2,type=!bee] run data merge entity @s {AngerTime:200s}
-
+### 蜜蜂修改 ###
+execute as @e[type=bee] at @s run function hardcore_survival:entity/bee
 ### 时间显示 ###
 execute as @a if data entity @s {SelectedItem:{id:"minecraft:clock"}} run function hardcore_survival:time/display
 
