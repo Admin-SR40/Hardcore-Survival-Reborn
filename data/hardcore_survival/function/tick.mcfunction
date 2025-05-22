@@ -57,7 +57,7 @@ scoreboard players set @a hs.percentage 100
 execute as @a store result score @s hs.maxHealth run attribute @s max_health get
 execute as @a store result score @s hs.yaw run data get entity @s Rotation[0]
 execute as @a store result score @s hs.pitch run data get entity @s Rotation[1]
-execute as @e[type=!#ignore] if entity @e[distance=0.05..2] store result score @s hs.fireTick run data get entity @s Fire
+execute as @e[type=!#ignore] if predicate hardcore_survival:fire store result score @s hs.fireTick run data get entity @s Fire
 
 ### 新玩家初始化 ###
 execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
@@ -75,11 +75,7 @@ execute as @a if score @s hs.waterHurtTimer matches 80.. run scoreboard players 
 execute as @a if score @s hs.water matches 1.. run scoreboard players set @s hs.waterHurtTimer 0
 
 ### 水中蹲下喝水 ###
-execute as @a at @s if score @s hs.sneakTick matches 1.. if block ~ ~ ~ water run scoreboard players add @s hs.drinkTimer 1
-execute as @a if score @s hs.drinkTimer matches 20.. run scoreboard players add @s hs.water 2
-execute as @a if score @s hs.water matches 100.. run scoreboard players set @s hs.water 100
-execute as @a if score @s hs.drinkTimer matches 20.. run scoreboard players set @s hs.drinkTimer 0
-execute as @a if score @s hs.sneakTick matches 1.. run scoreboard players set @s hs.sneakTick 0
+execute as @a at @s if score @s hs.sneakTick matches 1.. if block ~ ~ ~ water run function hardcore_survival:drink/sneak
 
 ### 黑暗地区获得黑暗BUFF ###
 execute as @a at @s if predicate hardcore_survival:is_dark run scoreboard players add @s hs.darkTimer 1
@@ -105,19 +101,9 @@ execute as @e at @s if score @s hs.fireTick matches 1.. run execute as @a[distan
 ### 体力值效果 ###
 execute as @a if score @s hs.sprintTick matches 0 if score @s hs.jumpTimes matches 0 if score @s hs.sneakTick matches 0 if score @s hs.exhaustion matches 2.. run scoreboard players remove @s hs.exhaustion 2
 execute as @a if score @s hs.sprintTick matches 0 if score @s hs.jumpTimes matches 0 if score @s hs.sneakTick matches 1.. if score @s hs.exhaustion matches 2.. run scoreboard players remove @s hs.exhaustion 2
-execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players add @s hs.exhaustion 1
-execute as @a if score @s hs.sprintTick matches 1.. run effect give @s hunger 1 0 true
-execute as @a if score @s hs.sprintTick matches 1.. run scoreboard players set @s hs.sprintTick 0
-execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players add @s hs.exhaustion 40
-execute as @a if score @s hs.jumpTimes matches 1.. run effect give @s hunger 1 0 true
-execute as @a if score @s hs.jumpTimes matches 1.. run scoreboard players set @s hs.jumpTimes 0
-execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s movement_speed modifier add exhaustion.movement_speed -0.4 add_multiplied_total
-execute as @a if score @s hs.exhaustion matches 1200.. run attribute @s jump_strength modifier add exhaustion.jump_strength -0.4 add_multiplied_total
-execute as @a if score @s hs.exhaustion matches 1200.. run title @s[tag=!hs.tiredReminder] title ""
-execute as @a if score @s hs.exhaustion matches 1200.. run title @s[tag=!hs.tiredReminder] subtitle [{"translate":"message.tired_1","fallback":"你累了, ","color":"yellow"},{"translate":"message.tired_2","fallback":"休息一会吧!","color":"yellow"}]
-execute as @a if score @s hs.exhaustion matches 1200.. run tag @s add hs.tiredReminder
-execute as @a if score @s hs.exhaustion matches ..900 run tag @s remove hs.tiredReminder
-execute as @a if score @s hs.exhaustion matches ..900 run attribute @s movement_speed modifier remove exhaustion.movement_speed
-execute as @a if score @s hs.exhaustion matches ..900 run attribute @s jump_strength modifier remove exhaustion.jump_strength
+execute as @a if score @s hs.sprintTick matches 1.. run function hardcore_survival:player/exhaustion_sprint
+execute as @a if score @s hs.jumpTimes matches 1.. run function hardcore_survival:player/exhaustion_jump
+execute as @a if score @s hs.exhaustion matches 1200.. run function hardcore_survival:player/exhaustion_apply
+execute as @a if score @s hs.exhaustion matches ..900 run function hardcore_survival:player/exhaustion_remove
 execute as @a if score @s hs.exhaustion matches 1300.. run scoreboard players set @s hs.exhaustion 1300
 scoreboard players set @s hs.sneakTick 0
