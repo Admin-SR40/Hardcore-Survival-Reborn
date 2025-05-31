@@ -13,8 +13,8 @@ The **mod version** is out! You can download and use it just like other mods!
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **2.1 Gamma**
-- Date: **25/5/18 3:15** (UTC +08:00)
+- Latest version: **2.2 Gamma**
+- Date: **25/5/31 17:40** (UTC +08:00)
 
 ## Requirements
 - Minecraft **1.21.4+** is highly recommended!

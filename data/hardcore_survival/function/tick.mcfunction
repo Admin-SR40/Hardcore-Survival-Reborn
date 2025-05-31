@@ -15,7 +15,7 @@
 # Lisensed under the GPLv3.0
 
 # Thanks for playing Hardcore Survival Reborn!
-# Current Version: 2.1 Gamma
+# Current Version: 2.2 Gamma
 # Compatible Minecraft Version: 1.21.4+
 # GitHub Respository: https://github.com/Admin-SR40/Hardcore-Survival-Reborn
 
