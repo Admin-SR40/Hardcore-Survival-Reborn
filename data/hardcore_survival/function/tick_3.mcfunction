@@ -38,13 +38,7 @@ execute as @a if score @s hs.shieldBlockTimer matches 120.. run scoreboard playe
 
 ### 获取攻击速度 ###
 scoreboard players set @a hs.attackSpeed 0
-execute as @a store result score @s hs.temp run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:fast_sword"
-execute as @a run scoreboard players operation @s hs.temp *= hs.temp_20 hs.temp
-execute as @a run scoreboard players operation @s hs.attackSpeed += @s hs.temp
-execute as @a store result score @s hs.temp run data get entity @s SelectedItem.components.minecraft:enchantments.levels."minecraft:heavy_blade"
-execute as @a run scoreboard players operation @s hs.temp *= hs.temp_20 hs.temp
-execute as @a run scoreboard players operation @s hs.attackSpeed -= @s hs.temp
-scoreboard players reset @s hs.temp
+execute as @a run function hardcore_survival:damage/speed_query
 
 ### 自定义攻击速度 ###
 execute as @e[type=!player,type=!#ignore] at @s if entity @a[distance=..10] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
@@ -72,20 +66,7 @@ kill @e[tag=hs.displayer,scores={hs.disappearTimer=20..}]
 
 ### 心跳视觉 ###
 execute as @a store result score @s hs.currentHealth run data get entity @s Health 100
-scoreboard players add @a[scores={hs.currentHealth=250..499}] hs.heartbeatTimer 1
-scoreboard players add @a[scores={hs.currentHealth=..249}] hs.heartbeatTimer 2
-execute as @a[scores={hs.heartbeatTimer=1..15}] run attribute @s movement_speed modifier remove hs.heartbeat_effect
-execute as @a[scores={hs.heartbeatTimer=16..24}] run attribute @s movement_speed modifier add hs.heartbeat_effect -0.1 add_multiplied_total
-scoreboard players set @a[scores={hs.heartbeatTimer=24..}] hs.heartbeatTimer 0
-scoreboard players set @a[scores={hs.currentHealth=500..}] hs.heartbeatTimer 0
-execute as @a[scores={hs.heartbeatTimer=16..17,hs.currentHealth=250..499},tag=!hs.heartbeatIn] at @s run playsound block.note_block.basedrum master @s ~ ~ ~ 0.5 0
-execute as @a[scores={hs.heartbeatTimer=16..17,hs.currentHealth=..249},tag=!hs.heartbeatIn] at @s run playsound block.note_block.basedrum master @s ~ ~ ~ 1 0
-execute as @a[scores={hs.heartbeatTimer=16..17}] run tag @s add hs.heartbeatIn
-execute as @a[scores={hs.heartbeatTimer=0..1,hs.currentHealth=250..499},tag=!hs.heartbeatOut] at @s run playsound block.note_block.basedrum master @s ~ ~ ~ 0.5 0
-execute as @a[scores={hs.heartbeatTimer=0..1,hs.currentHealth=..249},tag=!hs.heartbeatOut] at @s run playsound block.note_block.basedrum master @s ~ ~ ~ 1 0
-execute as @a[scores={hs.heartbeatTimer=0..1}] run tag @s add hs.heartbeatOut
-execute as @a[scores={hs.heartbeatTimer=0..1}] run tag @s remove hs.heartbeatIn
-execute as @a[scores={hs.heartbeatTimer=16..17}] run tag @s remove hs.heartbeatOut
+execute as @a[scores={hs.currentHealth=..499}] run function hardcore_survival:player/heartbeat
 
 ### 清除非法物品 ###
 clear @a barrier[custom_data={"hs.bannedRecipe":true}]

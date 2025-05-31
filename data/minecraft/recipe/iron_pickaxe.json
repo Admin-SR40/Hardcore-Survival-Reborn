@@ -9,9 +9,9 @@
         ]
     },
     "pattern": [
-        "A",
-        "A",
-        "B"
+        "AAA",
+        " B ",
+        " B "
     ],
     "result": {
         "id": "minecraft:iron_pickaxe",
