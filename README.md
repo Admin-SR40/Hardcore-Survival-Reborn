@@ -13,11 +13,11 @@ The **mod version** is out! You can download and use it just like other mods!
 - **Admin_SR40** (402757046@qq.com)
 
 ## Update info
-- Latest version: **2.2 Gamma**
-- Date: **25/5/31 17:40** (UTC +08:00)
+- Latest version: **2.3 Gamma**
+- Date: **25/7/21 2:50** (UTC +08:00)
 
 ## Requirements
-- Minecraft **1.21.4+** is highly recommended!
+- Minecraft **1.21.7+** is highly recommended!
 - For mod version, **any** mod loader is okay!
 - No more requirements, that's easy!
 
@@ -40,6 +40,7 @@ The **mod version** is out! You can download and use it just like other mods!
 - You can run other datapacks at the same time, but I'm **not** recommend to do so.
 - If you accidently broke something, just reload by using `/reload`, it should be fine.
 - The project is licensed under the **GPLv3**, see the LICENSE file for details.
+- Damage display is temporarily disabled, waiting for a fix.
 
 ## Modification
 - It's not easy to modify, but AI can help alot!
