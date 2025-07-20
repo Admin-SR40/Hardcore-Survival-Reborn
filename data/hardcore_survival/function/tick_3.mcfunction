@@ -54,15 +54,15 @@ execute as @a if data entity @s {SelectedItem:{}} run function hardcore_survival
 execute as @a unless data entity @s {SelectedItem:{}} run attribute @s entity_interaction_range modifier remove item.reach_entity
 execute as @a unless data entity @s {SelectedItem:{}} run attribute @s block_interaction_range modifier remove item.reach_block
 
-### 显示生命变化 ###
-execute as @e[tag=!hs.getHealth,type=!#ignore] store result score @s hs.currentHealth run data get entity @s Health 100
-execute as @e[type=!#ignore] if score @s hs.originalHealth matches -2147483648..2147483647 run tag @s add hs.getHealth
-execute as @e[type=!#ignore] unless score @s hs.originalHealth matches -2147483648..2147483647 run scoreboard players operation @s hs.originalHealth = @s hs.currentHealth
-execute as @e[type=!#ignore] at @s if entity @a[distance=..16] if score @s hs.originalHealth < @s hs.currentHealth run function hardcore_survival:damage/heal
-execute as @e[type=!#ignore,type=!player] at @s if entity @a[distance=..16] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/damage
-execute as @a at @s if entity @a[distance=..16] if data entity @s {HurtTime:9s} run function hardcore_survival:damage/damage
-scoreboard players add @e[tag=hs.displayer] hs.disappearTimer 1
-kill @e[tag=hs.displayer,scores={hs.disappearTimer=20..}]
+### 显示生命变化 ### (Temporarily disabled, waiting for update)
+#execute as @e[tag=!hs.getHealth,type=!#ignore] store result score @s hs.currentHealth run data get entity @s Health 100
+#execute as @e[type=!#ignore] if score @s hs.originalHealth matches -2147483648..2147483647 run tag @s add hs.getHealth
+#execute as @e[type=!#ignore] unless score @s hs.originalHealth matches -2147483648..2147483647 run scoreboard players operation @s hs.originalHealth = @s hs.currentHealth
+#execute as @e[type=!#ignore] at @s if entity @a[distance=..16] if score @s hs.originalHealth < @s hs.currentHealth run function hardcore_survival:damage/heal
+#execute as @e[type=!#ignore,type=!player] at @s if entity @a[distance=..16] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/damage
+#execute as @a at @s if entity @a[distance=..16] if data entity @s {HurtTime:9s} run function hardcore_survival:damage/damage
+#scoreboard players add @e[tag=hs.displayer] hs.disappearTimer 1
+#kill @e[tag=hs.displayer,scores={hs.disappearTimer=20..}]
 
 ### 心跳视觉 ###
 execute as @a store result score @s hs.currentHealth run data get entity @s Health 100

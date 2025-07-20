@@ -8,9 +8,9 @@ execute as @s if score @s hs.woundLevel matches 6.. run scoreboard players set @
 
 # 造成伤害
 attribute @s knockback_resistance modifier add wound.take_damage 99 add_value
-execute as @s if score @s hs.woundLevel matches 1 run damage @s 0.2 hardcore_survival:bypass
-execute as @s if score @s hs.woundLevel matches 2 run damage @s 0.4 hardcore_survival:bypass
-execute as @s if score @s hs.woundLevel matches 3 run damage @s 0.6 hardcore_survival:bypass
-execute as @s if score @s hs.woundLevel matches 4 run damage @s 0.8 hardcore_survival:bypass
-execute as @s if score @s hs.woundLevel matches 5 run damage @s 1.0 hardcore_survival:bypass
+execute as @s if score @s hs.woundLevel matches 1 run damage @s 0.2 minecraft:bypass
+execute as @s if score @s hs.woundLevel matches 2 run damage @s 0.4 minecraft:bypass
+execute as @s if score @s hs.woundLevel matches 3 run damage @s 0.6 minecraft:bypass
+execute as @s if score @s hs.woundLevel matches 4 run damage @s 0.8 minecraft:bypass
+execute as @s if score @s hs.woundLevel matches 5 run damage @s 1.0 minecraft:bypass
 attribute @s knockback_resistance modifier remove wound.take_damage
