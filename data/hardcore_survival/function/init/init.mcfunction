@@ -17,7 +17,7 @@ tag @s add hs.init
 
 tellraw @s [{"translate":"message.new_0","fallback":"","color":"gold"}]
 tellraw @s [{"translate":"message.new_1","fallback":"欢迎来到 ","color":"green"},{"text":"Hardcore Survival Reborn","color":"aqua"}]
-tellraw @s [{"translate":"message.new_2","fallback":"目前数据包版本: ","color":"green"},{"text":"2.3 Gamma","color":"aqua"}]
+tellraw @s [{"translate":"message.new_2","fallback":"目前数据包版本: ","color":"green"},{"text":"2.4 Gamma","color":"aqua"}]
 
 title @s times 0 100 0
 title @s title [{"translate":"message.new_title","fallback":"Hardcore Survival","color":"aqua"}]
