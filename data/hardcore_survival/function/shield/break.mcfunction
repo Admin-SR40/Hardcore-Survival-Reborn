@@ -4,6 +4,8 @@ attribute @s knockback_resistance modifier add shield.knockback_resistance 99 ad
 execute as @e[tag=hs.shieldBreaker] at @s run damage @p[scores={hs.shieldBlockTimes=4..}] 0.1 mob_attack_no_aggro by @s
 kill @e[tag=hs.shieldBreaker]
 attribute @s knockback_resistance modifier remove shield.knockback_resistance
+effect give @s slowness 2 0 true
+effect give @s weakness 2 0 true
 scoreboard players set @s hs.shieldBlockTimes 0
 scoreboard players set @s hs.shieldBlockTimer 0
 scoreboard players set @s hs.usedShield 0

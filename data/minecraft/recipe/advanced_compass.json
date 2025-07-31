@@ -17,11 +17,11 @@
             "custom_data": {
                 "version": "advanced"
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "hs.compass_advanced",
                 "fallback": "高级指南针",
                 "color": "white"
-            }'
+            }
         }
     }
 }

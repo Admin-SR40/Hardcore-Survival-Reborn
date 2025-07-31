@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 7"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 5"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "5. 联系方式",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "如有任何疑问, 意见或反馈, 请联系 402757046@qq.com. 但请勿发送骚扰性, 威胁性或不当内容, 也不欢迎未经请求的商业通讯. Admin_SR40 保留不回复违反本条款的讯息的权利.",
+                "color": "white"
+            }
+        }
+    ]
+}

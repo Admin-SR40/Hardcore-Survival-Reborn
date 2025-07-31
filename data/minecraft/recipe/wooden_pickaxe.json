@@ -26,9 +26,9 @@
             "custom_data": {
                 "craft":  true
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "item.minecraft.stone_pickaxe"
-            }',
+            },
             "tool": {
                 "damage_per_block": 1,
                 "default_mining_speed": 1,

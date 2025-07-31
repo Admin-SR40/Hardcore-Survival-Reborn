@@ -13,15 +13,15 @@
     "result": {
         "id": "minecraft:leather_leggings",
         "components": {
-            "minecraft:attribute_modifiers": {
-                "modifiers": [{
+            "minecraft:attribute_modifiers": [
+                {
                     "amount":1.0,
                     "id":"hs.leggings_armor",
                     "operation":"add_value",
                     "slot":"legs",
                     "type":"minecraft:armor"
-                    }]
-                },
+                }
+            ],
             "max_damage": 45,
             "custom_data": {
                 "craft": true

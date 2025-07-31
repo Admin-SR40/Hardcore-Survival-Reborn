@@ -16,11 +16,11 @@
             "custom_data": {
                 "version": "lite"
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "hs.clock_lite",
                 "fallback": "简易时钟",
                 "color": "white"
-            }'
+            }
         }
     }
 }

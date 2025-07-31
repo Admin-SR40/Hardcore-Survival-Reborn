@@ -18,24 +18,22 @@
         "count": 1,
         "components": {
             "max_damage": 286,
-            "attribute_modifiers": {
-                "modifiers": [
-                    {
-                        "type": "minecraft:armor",
-                        "slot": "feet",
-                        "operation": "add_value",
-                        "amount": 3,
-                        "id": "diamond_boots_armor"
-                    },
-                    {
-                        "type": "minecraft:armor_toughness",
-                        "slot": "feet",
-                        "operation": "add_value",
-                        "amount": 1,
-                        "id": "diamond_boots_armor_toughness"
-                    }
-                ]
-            },
+            "attribute_modifiers": [
+                {
+                    "type": "minecraft:armor",
+                    "slot": "feet",
+                    "operation": "add_value",
+                    "amount": 3,
+                    "id": "diamond_boots_armor"
+                },
+                {
+                    "type": "minecraft:armor_toughness",
+                    "slot": "feet",
+                    "operation": "add_value",
+                    "amount": 1,
+                    "id": "diamond_boots_armor_toughness"
+                }
+            ],
             "custom_data": {
                 "craft":  true
             }

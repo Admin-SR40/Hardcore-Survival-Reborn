@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 3"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 1"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "1. 许可授权",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "本数据包采用GNU通用公共许可证第三版 (GPLv3) 授权。根据该许可, 您可以自由修改和分发本数据包, 但必须遵守 GPLv3 的所有条款. 您必须保留所有版权声明, 且任何衍生作品同样须采用 GPLv3 授权. 虽然GPLv3允许修改和分发, 但禁止以任何违法, 有害或违反本条款及 GPLv3 的方式使用本数据包. 您有责任确保任何修改版或分发版数据包的所有使用者知悉并遵守 GPLv3 及本使用条款.",
+                "color": "white"
+            }
+        }
+    ]
+}

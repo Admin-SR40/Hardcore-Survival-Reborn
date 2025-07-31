@@ -22,10 +22,10 @@
                 "craft":  true,
                 "axe": true
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "hs.item.copper_axe",
                 "fallback": "铜斧"
-            }'
+            }
         }
     }
 }

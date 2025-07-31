@@ -7,7 +7,7 @@ execute as @e[type=#minecraft:skeletons,tag=hs.rideSpider] at @s run tag @e[type
 execute as @e[type=#minecraft:skeletons] run scoreboard players reset @s hs.randomGenerator
 
 ### 僵尸受击提速 ###
-execute as @e[type=#minecraft:zombies] if data entity @s {IsBaby:0b,HurtTime:10s} run attribute @s movement_speed modifier add zombie.movement_speed 0.25 add_multiplied_total
+execute as @e[type=#minecraft:zombies,tag=!hs.speedBoosted] if data entity @s {IsBaby:0b,HurtTime:10s} run function hardcore_survival:zombie/speed_boost
 
 ### 珍珠减速 ###
 execute as @a if score @s hs.usedEnderPearl matches 1.. run tag @s add hs.usedEnderPearl
@@ -41,7 +41,7 @@ scoreboard players set @a hs.attackSpeed 0
 execute as @a run function hardcore_survival:damage/speed_query
 
 ### 自定义攻击速度 ###
-execute as @e[type=!player,type=!#ignore] at @s if entity @a[distance=..10] if data entity @s {HurtTime:10s} run function hardcore_survival:damage/speed_limit
+execute as @e[type=!player,type=!#ignore,nbt={HurtTime:10s}] at @s if entity @a[distance=..10] run function hardcore_survival:damage/speed_limit
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 1.. run data merge entity @s {Invulnerable:1b}
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 1.. run scoreboard players remove @s hs.attackSpeed 1
 execute as @e[type=!player,type=!#ignore] if score @s hs.attackSpeed matches 0 run data merge entity @s {Invulnerable:0b}
@@ -71,6 +71,19 @@ execute as @a[scores={hs.currentHealth=..499}] run function hardcore_survival:pl
 ### 清除非法物品 ###
 clear @a barrier[custom_data={"hs.bannedRecipe":true}]
 kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{hs.bannedRecipe:1b}}}}]
+
+### 睡眠效果 ###
+execute as @a if data entity @s {SleepTimer:101s} run function hardcore_survival:player/sleep_reset
+scoreboard players add @a hs.timeTillLastSleep 1
+execute as @a run function hardcore_survival:player/sleep_clear
+execute as @a if score @s hs.timeTillLastSleep matches 48000.. run function hardcore_survival:player/sleep_punishments
+
+### 条款处理 ###
+execute as @a if score @s hs.agreeTOS matches 1.. run tag @s add hs.agreeTOS
+scoreboard players enable @a hs.termOfUsePage
+scoreboard players enable @a hs.agreeTOS
+execute as @a[tag=!hs.agreeTOS] run function hardcore_survival:player/show_terms
+scoreboard players set @a hs.agreeTOS 0
 
 ### 数据处理 ###
 scoreboard players reset @e hs.randomGenerator

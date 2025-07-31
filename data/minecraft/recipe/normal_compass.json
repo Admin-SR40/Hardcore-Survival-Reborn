@@ -16,11 +16,11 @@
             "custom_data": {
                 "version": "normal"
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "hs.compass_normal",
                 "fallback": "普通指南针",
                 "color": "white"
-            }'
+            }
         }
     }
 }

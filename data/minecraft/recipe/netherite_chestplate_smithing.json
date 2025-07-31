@@ -7,31 +7,29 @@
         "id": "netherite_chestplate",
         "components": {
             "max_damage": 394,
-            "attribute_modifiers": {
-                "modifiers": [
-                    {
-                        "amount": 6,
-                        "id": "netherite_chestplate_armor",
-                        "operation": "add_value",
-                        "type": "armor",
-                        "slot": "chest"
-                    },
-                    {
-                        "amount": 2,
-                        "id": "netherite_chestplate_armor_toughness",
-                        "operation": "add_value",
-                        "type": "armor_toughness",
-                        "slot": "chest"
-                    },
-                    {
-                        "amount": 0.05,
-                        "id": "netherite_chestplate_knockback_resistance",
-                        "operation": "add_value",
-                        "type": "knockback_resistance",
-                        "slot": "chest"
-                    }
-                ]
-            },
+            "attribute_modifiers": [
+                {
+                    "amount": 6,
+                    "id": "netherite_chestplate_armor",
+                    "operation": "add_value",
+                    "type": "armor",
+                    "slot": "chest"
+                },
+                {
+                    "amount": 2,
+                    "id": "netherite_chestplate_armor_toughness",
+                    "operation": "add_value",
+                    "type": "armor_toughness",
+                    "slot": "chest"
+                },
+                {
+                    "amount": 0.05,
+                    "id": "netherite_chestplate_knockback_resistance",
+                    "operation": "add_value",
+                    "type": "knockback_resistance",
+                    "slot": "chest"
+                }
+            ],
             "custom_data": {
                 "craft": true
             }

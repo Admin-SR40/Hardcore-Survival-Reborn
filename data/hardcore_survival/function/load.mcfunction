@@ -66,6 +66,10 @@ scoreboard objectives add hs.disappearTimer dummy
 scoreboard objectives add hs.displayer_1 dummy
 scoreboard objectives add hs.displayer_2 dummy
 scoreboard objectives add hs.heartbeatTimer dummy
+scoreboard objectives add hs.timeTillLastSleep dummy
+scoreboard objectives add hs.sleepTimer dummy
+scoreboard objectives add hs.termOfUsePage trigger
+scoreboard objectives add hs.agreeTOS trigger
 
 scoreboard players set hs.temp_1000 hs.temp 1000
 scoreboard players set hs.temp_3 hs.temp 3

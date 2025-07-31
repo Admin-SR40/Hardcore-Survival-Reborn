@@ -21,10 +21,10 @@
             "custom_data": {
                 "craft":  true
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "hs.item.copper_pickaxe",
                 "fallback": "铜镐"
-            }'
+            }
         }
     }
 }

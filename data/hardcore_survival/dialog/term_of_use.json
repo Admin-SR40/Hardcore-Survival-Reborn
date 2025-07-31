@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 2"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 1"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "Term of Use | 使用条款",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "如要使用本数据包或模组 (以下简称 HSR), 您必须同意以下条款. 使用 HSR 即表示您同意遵守本使用条款. 如果您不同意这些条款, 请勿使用 HSR.",
+                "color": "aqua"
+            }
+        }
+    ]
+}

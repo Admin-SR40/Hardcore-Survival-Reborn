@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 5"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 3"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "3. 免责声明",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "本数据包按 '原样' 提供, 不提供任何明示或默示担保, 包括但不限于适销性担保, 特定用途适用性担保和不侵权担保. Admin_SR40 不保证数据包的准确性, 完整性或可靠性. 在任何情况下, Admin_SR40 均不对因使用数据包产生的任何直接, 间接, 附带, 特殊或结果性损害承担责任, 即使已被告知可能发生此类损害. 使用本数据包即表示您同意自行承担所有风险和责任.",
+                "color": "white"
+            }
+        }
+    ]
+}

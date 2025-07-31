@@ -12,15 +12,15 @@
     "result": {
         "id": "minecraft:leather_boots",
         "components": {
-            "minecraft:attribute_modifiers": {
-                "modifiers": [{
+            "minecraft:attribute_modifiers": [
+                {
                     "amount":0.75,
                     "id":"hs.boots_armor",
                     "operation":"add_value",
                     "slot":"feet",
                     "type":"minecraft:armor"
-                    }]
-                },
+                }
+            ],
             "max_damage": 36,
             "custom_data": {
                 "craft": true

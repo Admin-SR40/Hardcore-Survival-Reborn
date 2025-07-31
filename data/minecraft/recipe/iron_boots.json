@@ -12,15 +12,15 @@
     "result": {
         "id": "minecraft:iron_boots",
         "components": {
-            "minecraft:attribute_modifiers": {
-                "modifiers": [{
+            "minecraft:attribute_modifiers": [
+                {
                     "amount":2.0,
                     "id":"hs.boots_armor",
                     "operation":"add_value",
                     "slot":"feet",
                     "type":"minecraft:armor"
-                    }]
-                },
+                }
+            ],
             "max_damage": 130,
             "custom_data": {
                 "craft":  true

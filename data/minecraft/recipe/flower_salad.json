@@ -40,10 +40,10 @@
             "custom_data": {
                 "craft": true
             },
-            "item_name": '{
+            "item_name": {
                 "translate":"item.flower_salad",
                 "fallback": "花卉沙拉"
-            }'
+            }
         }
     },
     "category": "misc"

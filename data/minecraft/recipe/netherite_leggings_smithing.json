@@ -7,31 +7,29 @@
         "id": "netherite_leggings",
         "components": {
             "max_damage": 370,
-            "attribute_modifiers": {
-                "modifiers": [
-                    {
-                        "amount": 6,
-                        "id": "netherite_leggings_armor",
-                        "operation": "add_value",
-                        "type": "armor",
-                        "slot": "legs"
-                    },
-                    {
-                        "amount": 2,
-                        "id": "netherite_leggings_armor_toughness",
-                        "operation": "add_value",
-                        "type": "armor_toughness",
-                        "slot": "legs"
-                    },
-                    {
-                        "amount": 0.05,
-                        "id": "netherite_leggings_knockback_resistance",
-                        "operation": "add_value",
-                        "type": "knockback_resistance",
-                        "slot": "legs"
-                    }
-                ]
-            },
+            "attribute_modifiers": [
+                {
+                    "amount": 6,
+                    "id": "netherite_leggings_armor",
+                    "operation": "add_value",
+                    "type": "armor",
+                    "slot": "legs"
+                },
+                {
+                    "amount": 2,
+                    "id": "netherite_leggings_armor_toughness",
+                    "operation": "add_value",
+                    "type": "armor_toughness",
+                    "slot": "legs"
+                },
+                {
+                    "amount": 0.05,
+                    "id": "netherite_leggings_knockback_resistance",
+                    "operation": "add_value",
+                    "type": "knockback_resistance",
+                    "slot": "legs"
+                }
+            ],
             "custom_data": {
                 "craft": true
             }

@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 4"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 2"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "2. 光敏性癫痫警告",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "HSR 可能包含闪光或快速视觉变换效果. 这些视觉效果可能诱发光敏性癫痫患者发病. 如有光敏性癫痫病史或其他可能因视觉刺激加重的健康问题, 使用本数据包时请务必谨慎. 我们强烈建议在使用前咨询专业医师. 如果您在使用过程中感到任何不适, 请立即停止使用并寻求医疗帮助.",
+                "color": "white"
+            }
+        }
+    ]
+}

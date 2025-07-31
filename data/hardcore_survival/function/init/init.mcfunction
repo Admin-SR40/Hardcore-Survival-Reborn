@@ -23,4 +23,6 @@ title @s times 0 100 0
 title @s title [{"translate":"message.new_title","fallback":"Hardcore Survival","color":"aqua"}]
 title @s subtitle [{"translate":"message.new_subtitle","fallback":"Reborn","color":"red"}]
 
+effect clear @s
+
 team join hs @s

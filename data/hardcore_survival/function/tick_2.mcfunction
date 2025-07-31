@@ -2,6 +2,9 @@
 ### 低状态获得DEBUFF ###
 execute as @a run function hardcore_survival:debuff/calc
 
+### 新玩家初始化 ###
+execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
+
 ### 生物加强 ###
 execute as @e[type=!player,tag=!hs.mob,type=!#ignore] run function hardcore_survival:entity/modify
 execute as @e[type=creeper] if data entity @s {powered:true} run data merge entity @s {Fuse:15s}

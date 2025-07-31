@@ -1,0 +1,45 @@
+{
+    "type": "confirmation",
+    "title": {
+        "text": ""
+    },
+    "yes": {
+        "label": {
+            "text": "Next | 下一页",
+            "color": "green"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 6"
+        }
+    },
+    "no": {
+        "label": {
+            "text": "Previous | 上一页",
+            "color": "red"
+        },
+        "action": {
+            "type": "run_command",
+            "command": "/trigger hs.termOfUsePage set 4"
+        }
+    },
+    "can_close_with_escape": false,
+    "pause": true,
+    "body": [
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "4. 条款变更",
+                "color": "gold",
+                "bold": true
+            }
+        },
+        {
+            "type": "plain_message",
+            "contents": {
+                "text": "Admin_SR40 可能不定期更新本使用条款. 您有责任定期查阅条款内容. 若在条款变更后继续使用本数据包, 即表示您接受新条款. 我们保留随时修改条款的权利, 且不另行通知. 请注意, 任何修改后的条款将在发布后立即生效, 除非另有说明.",
+                "color": "white"
+            }
+        }
+    ]
+}

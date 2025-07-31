@@ -7,12 +7,12 @@
   "result": {
     "id": "minecraft:netherite_scrap",
     "components": {
-      "lore": ['{
+      "lore": [{
         "translate": "item.nether_scrap_from_smelting",
         "fallback": "无法从熔炉中冶炼下界合金",
         "color": "red",
         "italic": false
-      }']
+      }]
     }
   }
 }

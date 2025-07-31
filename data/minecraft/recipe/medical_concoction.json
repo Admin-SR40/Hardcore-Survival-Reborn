@@ -57,10 +57,10 @@
                 ]
             },
             "rarity": "epic",
-            "item_name": '{
+            "item_name": {
                 "translate": "item.medical_concoction",
                 "fallback": "复合药汤"
-            }'
+            }
         }
     }
 }

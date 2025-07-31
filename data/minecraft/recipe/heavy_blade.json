@@ -17,11 +17,11 @@
                 "heavy_blade": 1
             },
             "lore": [
-                '{
+                {
                     "text": "每 1 级增加 0.2 攻击伤害, 但同时也增加 10% 受伤间隔",
                     "italic": false,
                     "color": "dark_gray"
-                }'
+                }
             ]
         }
     }

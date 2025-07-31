@@ -27,9 +27,9 @@
                 "craft":  true,
                 "axe": true
             },
-            "item_name": '{
+            "item_name": {
                 "translate": "item.minecraft.stone_axe"
-            }'
+            }
         }
     }
 }

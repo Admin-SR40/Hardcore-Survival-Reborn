@@ -58,9 +58,7 @@ execute as @a store result score @s hs.maxHealth run attribute @s max_health get
 execute as @a store result score @s hs.yaw run data get entity @s Rotation[0]
 execute as @a store result score @s hs.pitch run data get entity @s Rotation[1]
 execute as @e[type=!#ignore] if predicate hardcore_survival:fire store result score @s hs.fireTick run data get entity @s Fire
-
-### 新玩家初始化 ###
-execute as @a if entity @s[tag=!hs.init] run function hardcore_survival:init/init
+execute as @a store result score @s hs.sleepTimer run data get entity @s SleepTimer
 
 ### 水分减少 ###
 execute as @a if score @s hs.water matches 1.. run scoreboard players add @s hs.waterTimer 2
@@ -70,7 +68,7 @@ execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players re
 execute as @a if score @s hs.waterTimer matches 1440.. run scoreboard players set @s hs.waterTimer 0
 execute as @a if score @s hs.water matches 0 run scoreboard players set @s hs.waterTimer 0
 execute as @a if score @s hs.water matches 0 run scoreboard players add @s hs.waterHurtTimer 1
-execute as @a if score @s hs.waterHurtTimer matches 80.. run damage @s 1 bypass
+execute as @a if score @s hs.waterHurtTimer matches 80.. run damage @s 1 dry_out
 execute as @a if score @s hs.waterHurtTimer matches 80.. run scoreboard players set @s hs.waterHurtTimer 0
 execute as @a if score @s hs.water matches 1.. run scoreboard players set @s hs.waterHurtTimer 0
 
